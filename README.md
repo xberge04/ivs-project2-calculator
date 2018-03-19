@@ -1,9 +1,11 @@
-Prostredi
+# IVS 2. projekt - kalkulačka
+
+Prostředí
 ---------
 
 Windows 64bit
 
-Autori
+Autoři
 ------
 
 50%OFF
