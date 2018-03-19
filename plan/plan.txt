@@ -1,0 +1,49 @@
+50%OFF - plán projektu
+
+Jednotlivé podúkoly, jejich termíny a odpovědná osoba
+-------------------------------------------------------------------------
+Do 19. 3. 2018
+Vytvořit plán projektu a odevzdat do WISu - Martin Berger
+
+Do 26. 3. 2018
+Zvolit funkci kalkulačky navíc a vytvořit grafický návrh - Arthur Nácar
+
+Do 2. 4. 2018
+Vytvořit testy pro matematickou knihovnu - Klára Formánková
+Vytvoření matematické knihovny - Martin Berger
+Implementace grafického rozhraní - Arthur Nácar
+Vytvoření Makefile - Vít Šebela
+
+Do 9. 4. 2018
+Propojení grafického rozhraní s matematickou knihovnou - Martin Berger
+Dokumentace profilingu - Vít Šebela
+
+Do 16. 4. 2018
+Vytvořit MockUpy - Arthur Nácar
+Vytvořit instalátor - Klára Formánková
+
+Do 21. 4. 2018
+Vytvoření uživatelské příručky - Martin Berger
+Vytvoření dokumentace (z verzí všech členů) - Vít Šebela
+Zdokumentovat debugging - Klára Formánková
+
+Do 23. 4. 2018
+Vytvořit hodnocení jednotlivých členů týmu - Arthur Nácar
+Zdokumentovat rozdíly mezi původním plánem a skutečností - Martin Berger
+
+24. 4. 2018
+Společná  kontrola všech částí projektu
+Odevzdání všech částí projektu
+
+
+Komunikační kanály 
+---------------------------
+1.  Trello - správa termínů a kontrola jejich plnění
+2. Facebook - běžná komunikace 
+
+
+
+Systém pro správu verzí
+--------------------------------
+Github.com - https://github.com/xberge04/ivs-project2-calculator
+Do repozitáře byl povolen přístup uživateli ivskontrola se stejnými právy, jako ostatním členům.
