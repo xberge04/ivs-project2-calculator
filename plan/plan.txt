@@ -42,7 +42,6 @@ Komunikační kanály
 2. Facebook - běžná komunikace 
 
 
-
 Systém pro správu verzí
 --------------------------------
 Github.com - https://github.com/xberge04/ivs-project2-calculator
