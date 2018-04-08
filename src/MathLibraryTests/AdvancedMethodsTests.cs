@@ -1,5 +1,5 @@
 ﻿using System;
-//using MathLibrary;
+using MathLibrary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MathLibraryTests
@@ -40,7 +40,7 @@ namespace MathLibraryTests
             Assert.AreEqual(100000000, math.Root(100000000, 1));
 
             //NaN result
-            string noFailMessage = "No exception message when result was NaN or infinity.";
+            string noFailMessage = "No exception message when result was NaN.";
 
             try
             {
@@ -82,7 +82,7 @@ namespace MathLibraryTests
             Assert.AreEqual(0.000064, math.Pow(2.5, -3), Exactness);
 
             //NaN result
-            string noFailMessage = "No exception message when result was NaN or infinity.";
+            string noFailMessage = "No exception message when result was NaN.";
 
             try
             {
@@ -114,7 +114,7 @@ namespace MathLibraryTests
             Assert.AreEqual(1, math.Fact(0));
 
             //NaN result
-            string noFailMessage = "No exception message when result was NaN or infinity.";
+            string noFailMessage = "No exception message when result was NaN.";
 
             try
             {
@@ -125,7 +125,61 @@ namespace MathLibraryTests
             {
             }
         }
+
+        /// <summary>
+        /// Logarithm test
+        /// </summary>
+        [TestMethod]
+        public void LogTest()
+        {
+            Assert.AreEqual(0, math.Log(10, 1));
+            Assert.AreEqual(10, math.Log(2, 1024));
+            Assert.AreEqual(1, math.Log(0.5, 0.5), Exactness);
+            Assert.AreEqual(1.2835, math.Log(100, 369), Exactness);
+            Assert.AreEqual(-4.9233, math.Log(0.8, 3), Exactness);
+            Assert.AreEqual(5.3955, math.Log(0.8, 0.3), Exactness);
+            Assert.AreEqual(-0.7481, math.Log(5, 0.3), Exactness);
+
+            //NaN result
+            string noFailMessage = "No exception message when result was NaN.";
+
+            try
+            {
+                math.Log(0, 1);
+                Assert.Fail(noFailMessage);
+            }
+            catch(ExceptionMessage)
+            {
+            }
+
+            try
+            {
+                math.Log(1, 10);
+                Assert.Fail(noFailMessage);
+            }
+            catch (ExceptionMessage)
+            {
+            }
+
+            try
+            {
+                math.Log(-3, 10);
+                Assert.Fail(noFailMessage);
+            }
+            catch (ExceptionMessage)
+            {
+            }
+
+            try
+            {
+                math.Log(10, -3);
+                Assert.Fail(noFailMessage);
+            }
+            catch (ExceptionMessage)
+            {
+            }
+        }
     }
 }
-}
+
 
