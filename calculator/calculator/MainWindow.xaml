@@ -127,7 +127,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="btn_point" Content="," HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Margin="150,349,0,0" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF666666" BorderBrush="{x:Null}" Foreground="White" FontSize="20">
+        <Button x:Name="btn_point" Content="," HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Margin="150,349,0,0" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF666666" BorderBrush="{x:Null}" Foreground="White" FontSize="20" Click="btn_point_Click">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
