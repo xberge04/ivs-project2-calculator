@@ -1,5 +1,5 @@
 ﻿using System;
-//using MathLibrary;
+using MathLibrary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MathLibraryTests
