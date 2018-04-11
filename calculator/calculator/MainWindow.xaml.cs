@@ -38,142 +38,81 @@ namespace teamCalculator
             }
         }
 
+        private void num_btn_click(int number)
+        {
+            if (number == 0) {
+                if (inset_mode)
+                {
+                    display_textBox.Text += "0";
+                    display_textResize(display_textBox.Text.Length);
+                }
+
+                //@todo nesmí jít přidat na začátku víc jak jedna nula (00,5)
+
+            }
+            else
+            {
+                if (inset_mode)
+                {
+                    display_textBox.Text += ""+number;
+                    display_textResize(display_textBox.Text.Length);
+                }
+                else
+                {
+                    display_textBox.Text = ""+number;
+                    inset_mode = true;
+                }
+            }    
+         }
+
         private void btn_0_Click(object sender, RoutedEventArgs e)
         {
-            if (inset_mode)
-            {
-                display_textBox.Text += "0";
-                display_textResize(display_textBox.Text.Length);
-            }
-
-            //@todo nesmí jít přidat na začátku víc jak jedna nula (00,5)
-
+            num_btn_click(0);
         }
 
         private void btn_1_Click(object sender, RoutedEventArgs e)
         {
-            if (inset_mode)
-            {
-                display_textBox.Text += "1";
-                display_textResize(display_textBox.Text.Length);
-            }
-            else
-            {
-                display_textBox.Text = "1";
-                inset_mode = true;
-            }
+            num_btn_click(1);
         }
 
         private void btn_2_Click(object sender, RoutedEventArgs e)
         {
-            if (inset_mode)
-            {
-                display_textBox.Text += "2";
-                display_textResize(display_textBox.Text.Length);
-            }
-            else
-            {
-                display_textBox.Text = "2";
-                inset_mode = true;
-            }
+            num_btn_click(2);
         }
 
         private void btn_3_Click(object sender, RoutedEventArgs e)
         {
-            if (inset_mode)
-            {
-                display_textBox.Text += "3";
-                display_textResize(display_textBox.Text.Length);
-            }
-            else
-            {
-                display_textBox.Text = "3";
-                inset_mode = true;
-            }
+            num_btn_click(3);
         }
 
         private void btn_4_Click(object sender, RoutedEventArgs e)
         {
-            if (inset_mode)
-            {
-                display_textBox.Text += "4";
-                display_textResize(display_textBox.Text.Length);
-            }
-            else
-            {
-                display_textBox.Text = "4";
-                inset_mode = true;
-            }
+            num_btn_click(4);
         }
 
         private void btn_5_Click(object sender, RoutedEventArgs e)
         {
-            if (inset_mode)
-            {
-                display_textBox.Text += "5";
-                display_textResize(display_textBox.Text.Length);
-            }
-            else
-            {
-                display_textBox.Text = "5";
-                inset_mode = true;
-            }
+            num_btn_click(5);
         }
 
         private void btn_6_Click(object sender, RoutedEventArgs e)
         {
-            if (inset_mode)
-            {
-                display_textBox.Text += "6";
-                display_textResize(display_textBox.Text.Length);
-            }
-            else
-            {
-                display_textBox.Text = "6";
-                inset_mode = true;
-            }
+            num_btn_click(6);
         }
 
         private void btn_7_Click(object sender, RoutedEventArgs e)
         {
-            if (inset_mode)
-            {
-                display_textBox.Text += "7";
-                display_textResize(display_textBox.Text.Length);
-            }
-            else
-            {
-                display_textBox.Text = "7";
-                inset_mode = true;
-            }
+            num_btn_click(7);
         }
 
         private void btn_8_Click(object sender, RoutedEventArgs e)
         {
-            if (inset_mode)
-            {
-                display_textBox.Text += "8";
-                display_textResize(display_textBox.Text.Length);
-            }
-            else
-            {
-                display_textBox.Text = "8";
-                inset_mode = true;
-            }
+            num_btn_click(8);
         }
 
         private void btn_9_Click(object sender, RoutedEventArgs e)
         {
-            if (inset_mode)
-            {
-                display_textBox.Text += "9";
-                display_textResize(display_textBox.Text.Length);
-            }
-            else
-            {
-                display_textBox.Text = "9";
-                inset_mode = true;
-            }
+            num_btn_click(9);
         }
 
         private void btn_C_Click(object sender, RoutedEventArgs e)
