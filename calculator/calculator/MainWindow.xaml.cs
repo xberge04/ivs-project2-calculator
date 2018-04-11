@@ -24,7 +24,7 @@ namespace teamCalculator
         public MainWindow()
         {
             InitializeComponent();
-            inset_mode = true;
+            inset_mode = true;   
         }
         private void display_textResize(int num_of_digits)
         {
@@ -128,7 +128,7 @@ namespace teamCalculator
 
         private void btn_point_Click(object sender, RoutedEventArgs e)
         {
-            if (inset_mode && display_textBox.Text.Length > 0)
+            if (inset_mode && display_textBox.Text.Length > 0 && !display_textBox.Text.Contains(','))
                 display_textBox.Text += ",";
 
         }

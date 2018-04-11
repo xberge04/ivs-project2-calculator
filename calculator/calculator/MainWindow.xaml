@@ -356,7 +356,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="btn_sqrt" Content="sqrt()" HorizontalAlignment="Left" Width="60" Margin="210,70,0,280" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" Foreground="#FFFF6C6C" BorderBrush="{x:Null}" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Style="{DynamicResource Button_num_style}" FontFamily="GeosansLight" FontSize="25">
+        <Button x:Name="btn_sqrt" Content='sqrt' HorizontalAlignment="Left" Width="60" Margin="210,70,0,280" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" Foreground="#FFFF6C6C" BorderBrush="{x:Null}" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Style="{DynamicResource Button_num_style}" FontFamily="GeosansLight" FontSize="25">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
