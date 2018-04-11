@@ -43,12 +43,11 @@ namespace teamCalculator
             if (number == 0) {
                 if (inset_mode)
                 {
+                    if (display_textBox.Text.Length == 1 && display_textBox.Text[0] == '0') // v případě, že již je zadaná 0, jako prvni znak nejde přidat další
+                        return;
                     display_textBox.Text += "0";
                     display_textResize(display_textBox.Text.Length);
                 }
-
-                //@todo nesmí jít přidat na začátku víc jak jedna nula (00,5)
-
             }
             else
             {
