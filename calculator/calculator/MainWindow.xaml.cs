@@ -96,5 +96,45 @@ namespace calculator
         {
             CalcDo.one_operand_btn_click("!");
         }
+
+        private void btn_eq_Click(object sender, RoutedEventArgs e)
+        {
+            CalcDo.eq_btn_click();
+        }
+
+        private void btn_plus_Click(object sender, RoutedEventArgs e)
+        {
+            CalcDo.two_operand_btn_click("+");
+        }
+
+        private void btn_minus_Click(object sender, RoutedEventArgs e)
+        {
+            CalcDo.two_operand_btn_click("-");
+        }
+
+        private void btn_mul_Click(object sender, RoutedEventArgs e)
+        {
+            CalcDo.two_operand_btn_click("*");
+        }
+
+        private void btn_div_Click(object sender, RoutedEventArgs e)
+        {
+            CalcDo.two_operand_btn_click("/");
+        }
+
+        private void btn_pow_Click(object sender, RoutedEventArgs e)
+        {
+            CalcDo.two_operand_btn_click("power");
+        }
+
+        private void btn_sqrt_Click(object sender, RoutedEventArgs e)
+        {
+            CalcDo.two_operand_btn_click("root");
+        }
+
+        private void btn_log_Click(object sender, RoutedEventArgs e)
+        {
+            CalcDo.two_operand_btn_click("log");
+        }
     }
 }
