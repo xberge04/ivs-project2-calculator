@@ -91,5 +91,10 @@ namespace calculator
         {
             CalcDo.point_btn_click();
         }
+
+        private void btn_fact_Click(object sender, RoutedEventArgs e)
+        {
+            CalcDo.one_operand_btn_click("!");
+        }
     }
 }
