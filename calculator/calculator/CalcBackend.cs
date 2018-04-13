@@ -63,6 +63,9 @@ namespace calculator
                 case "+":
                     operand1 = Math.Add(operand1, dispString_to_numb(display.Text));
                     break;
+                case "-":
+                    operand1 = Math.Add(operand1, -(dispString_to_numb(display.Text)));
+                    break;
                 case "*":
                     operand1 = Math.Mul(operand1, dispString_to_numb(display.Text));
                     break;
@@ -81,6 +84,11 @@ namespace calculator
                 default:
                     break;
             }
+        }
+
+        public void num_invert_brn()
+        {
+            display.Text = "" + -(dispString_to_numb(display.Text));
         }
 
         public void num_btn_click(int number)
@@ -151,6 +159,11 @@ namespace calculator
 
         public void two_operand_btn_click(string operation)
         {
+            if (operation == "")
+            {
+                myOperator = operation;
+                return;
+            }
             if (firstTime_click)
             {
                 operand1 = dispString_to_numb(display.Text);
