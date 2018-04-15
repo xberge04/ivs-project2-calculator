@@ -148,7 +148,7 @@ namespace calculator.Math_Library
             else
             {
                 throw new ArgumentException("Number of factorial can be only natural number or zero.");
-            }
+            }            
             return result;
         }
 
