@@ -412,7 +412,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btn_fact" Content="!" HorizontalAlignment="Left" Width="60" Margin="140,0,0,280" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" Foreground="#FFFF6C6C" BorderBrush="{x:Null}" VerticalAlignment="Bottom" Style="{DynamicResource Button_num_style}" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" FontSize="25" Click="btn_fact_Click">
+            <Button x:Name="btn_fact" Content="x!" HorizontalAlignment="Left" Width="60" Margin="140,0,0,280" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" Foreground="#FFFF6C6C" BorderBrush="{x:Null}" VerticalAlignment="Bottom" Style="{DynamicResource Button_num_style}" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" FontSize="25" Click="btn_fact_Click">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
