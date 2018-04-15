@@ -207,5 +207,10 @@ namespace calculator
         {
             CalcDo.num_invert_brn();
         }
+
+        private void Calculator_view_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
     }
 }

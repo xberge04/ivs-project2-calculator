@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:calculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="360" HorizontalAlignment="Center" ResizeMode="NoResize" Foreground="{x:Null}" Style="{DynamicResource Window_main_style}" VerticalAlignment="Center" AllowsTransparency="True" WindowStyle="None">
+        Title="MainWindow" Height="450" Width="360" HorizontalAlignment="Center" ResizeMode="NoResize" Foreground="{x:Null}" Style="{DynamicResource Window_main_style}" VerticalAlignment="Center" AllowsTransparency="True" WindowStyle="None" MouseLeftButtonDown="Calculator_view_MouseLeftButtonDown">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
