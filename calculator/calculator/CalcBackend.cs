@@ -12,22 +12,24 @@ namespace calculator
      *@brief Třída zpracovává vstupy z UI 
      * 
      */
-    class CalcBackend
+    public class CalcBackend
     {
-        private bool insert_mode; //přepínač rozhodující o novém čísle, nebo jen přidání číslice ke stávajícímu číslu
         TextBlock display;
         Math_Library.Math Math;
+        private bool insert_mode; //přepínač rozhodující o novém čísle, nebo jen přidání číslice ke stávajícímu číslu
         double operand1;
         bool firstTime_click; //znamená to, že ještě nebyla zadá žádná matematická operace
-        string myOperator;
+        bool was_firstTime_click; //jestli předchozí operace byla firsttime_click
+        string lastOperator;
 
         public CalcBackend(TextBlock displ) {
-            insert_mode = true;
             display = displ;
             Math = new Math_Library.Math();
+            insert_mode = true;
             operand1 = 0;
             firstTime_click = true;
-            myOperator = "";
+            was_firstTime_click = false;
+            lastOperator = "";
         }
 
         private void display_textResize(int num_of_digits)
@@ -58,7 +60,7 @@ namespace calculator
 
         private void do_math_operation()
         {
-            switch (myOperator)
+            switch (lastOperator)
             {
                 case "+":
                     operand1 = Math.Add(operand1, dispString_to_numb(display.Text));
@@ -121,7 +123,7 @@ namespace calculator
         public void c_btn_click()
         {
             operand1 = 0;
-            myOperator = "";
+            lastOperator = "";
             firstTime_click = true;
             display.Text = "";
             insert_mode = true;
@@ -161,38 +163,43 @@ namespace calculator
         {
             if (operation == "")
             {
-                myOperator = operation;
-                return;
-            }
-            if (firstTime_click)
-            {
-                operand1 = dispString_to_numb(display.Text);
-                this.myOperator = operation;
-                insert_mode = false;
-                firstTime_click = false;
-                return;
+                if (was_firstTime_click)
+                {
+                    firstTime_click = true;
+                    was_firstTime_click = false;
+                }
+                lastOperator = "";
+                insert_mode = true;
             }
             else
             {
-                do_math_operation();
-                myOperator = operation;
-                display.Text = "" + operand1;
-                insert_mode = false;
+                if (firstTime_click)
+                {
+                    operand1 = dispString_to_numb(display.Text);
+                    firstTime_click = false;
+                    insert_mode = false;
+                    was_firstTime_click = true;
+                    lastOperator = operation;
+                }
+                else
+                {
+                    do_math_operation();
+                    lastOperator = operation;
+                    display.Text = "" + operand1;
+                    insert_mode = false;
+                    was_firstTime_click = false;
+                }
+                
             }
-
         }
-
 
         public void eq_btn_click()
         {
             do_math_operation();
-
-            myOperator = "";
+            lastOperator = "";
             display.Text = "" + operand1;
             insert_mode = false;
             firstTime_click = true;
-
         }
-
     }
 }
