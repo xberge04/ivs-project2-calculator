@@ -60,51 +60,61 @@ namespace calculator
         {
             CalcDo.num_btn_click(0);
             turnOff_all_borders();
+            lastSelected = null;
         }
         private void btn_1_Click(object sender, RoutedEventArgs e)
         {
             CalcDo.num_btn_click(1);
             turnOff_all_borders();
+            lastSelected = null;
         }
         private void btn_2_Click(object sender, RoutedEventArgs e)
         {
             CalcDo.num_btn_click(2);
             turnOff_all_borders();
+            lastSelected = null;
         }
         private void btn_3_Click(object sender, RoutedEventArgs e)
         {
             CalcDo.num_btn_click(3);
             turnOff_all_borders();
+            lastSelected = null;
         }
         private void btn_4_Click(object sender, RoutedEventArgs e)
         {
             CalcDo.num_btn_click(4);
             turnOff_all_borders();
+            lastSelected = null;
         }
         private void btn_5_Click(object sender, RoutedEventArgs e)
         {
             CalcDo.num_btn_click(5);
             turnOff_all_borders();
+            lastSelected = null;
         }
         private void btn_6_Click(object sender, RoutedEventArgs e)
         {
             CalcDo.num_btn_click(6);
             turnOff_all_borders();
+            lastSelected = null;
         }
         private void btn_7_Click(object sender, RoutedEventArgs e)
         {
             CalcDo.num_btn_click(7);
             turnOff_all_borders();
+            lastSelected = null;
         }
         private void btn_8_Click(object sender, RoutedEventArgs e)
         {
             CalcDo.num_btn_click(8);
             turnOff_all_borders();
+            lastSelected = null;
         }
         private void btn_9_Click(object sender, RoutedEventArgs e)
         {
             CalcDo.num_btn_click(9);
             turnOff_all_borders();
+            lastSelected = null;
         }
         //*****************************************************************************************************************************
 
@@ -243,7 +253,7 @@ namespace calculator
                 evenClick = true; //numisí být
                 lastSelected = btn_sqrt;
                 turnOn_this_border(btn_sqrt);
-                CalcDo.two_operand_btn_click("//");
+                CalcDo.two_operand_btn_click("/");
             }
 
             else if (evenClick && lastSelected == btn_sqrt) //this.tlačitko je zaškrtnuté

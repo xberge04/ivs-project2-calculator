@@ -84,7 +84,7 @@ namespace calculator.Math_Library
             }
             else
             {
-                throw new ArgumentException("Exponent can be only natural number.");
+                throw new ArgumentOutOfRangeException();
             }
         }
 
@@ -105,7 +105,7 @@ namespace calculator.Math_Library
             double result = 0;
             if(num2 == 0)
             {
-                throw new ArgumentException("Exponent of root can not be 0.");
+                throw new ArgumentOutOfRangeException();
             }
             if (num2 % 2 == 0)
             {
@@ -115,7 +115,7 @@ namespace calculator.Math_Library
                 }
                 else
                 {
-                    throw new ArgumentException("Base of even root can not be negative.");
+                    throw new ArgumentOutOfRangeException();
                 }
             }
             else if(num2 % 2 != 0)
@@ -147,7 +147,7 @@ namespace calculator.Math_Library
             }
             else
             {
-                throw new ArgumentException("Number of factorial can be only natural number or zero.");
+                throw new ArgumentOutOfRangeException();
             }            
             return result;
         }
@@ -169,12 +169,12 @@ namespace calculator.Math_Library
                 }
                 else
                 {
-                    throw new ArgumentException("Number of logarithm can be only positive real numbers.");
+                    throw new ArgumentOutOfRangeException();
                 }
             }
             else
             {
-                throw new ArgumentException("Number of base can be only positive real numbers without 1.");
+                throw new ArgumentOutOfRangeException();
             }
         }
     }

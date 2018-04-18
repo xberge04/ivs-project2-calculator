@@ -53,6 +53,10 @@ namespace calculator
                 text.Replace(',', '.');
                 return double.Parse(text);
             }
+            if (text.Contains("Chyba!"))
+            {
+                return (double) 0;
+            }
             else {
                 return double.Parse(text);
             }
@@ -142,18 +146,25 @@ namespace calculator
         }
 
         public void one_operand_btn_click(string operation) {
-            switch (operation) {
-                case "pi":
-                    break;
-                case "!":
-                    if (display.Text.Length != 0)
-                    {
-                        display.Text = "" + Math.Fact(dispString_to_numb(display.Text));
-                        insert_mode = false;
-                    }
-                    break;
-                default:
-                    break;
+            try
+            {
+                switch (operation)
+                {
+                    case "!":
+                        if (display.Text.Length != 0)
+                        {
+                            display.Text = "" + Math.Fact(dispString_to_numb(display.Text));
+                            insert_mode = false;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+            catch(Exception)
+            {
+                display.Text = "Chyba!";
+                lastOperator = "0";
             }
 
 
@@ -195,7 +206,15 @@ namespace calculator
 
         public void eq_btn_click()
         {
-            do_math_operation();
+            try
+            {
+                do_math_operation();
+            }
+            catch(Exception)
+            {
+                display.Text = "Chyba!";
+                lastOperator = "0";
+            }
             lastOperator = "";
             display.Text = "" + operand1;
             insert_mode = false;
