@@ -44,6 +44,22 @@ namespace calculator
             }
         }
 
+        private void dislay_number(double number)
+        {
+            display.FontSize = 36;
+            display.Text = "" + number;
+
+            if (display.Text.Length > 30)
+            {
+                display.Text = ""+ dispString_to_numb(display.Text).ToString("e");
+            }
+
+            if (display.Text.Length > 17)
+            {
+                display.FontSize = 36 * Math.Pow(0.95, display.Text.Length - 17.0);
+            }
+        }
+
         private double dispString_to_numb(string text)
         {
             if (text.Length == 0)
@@ -143,12 +159,10 @@ namespace calculator
 
         public void one_operand_btn_click(string operation) {
             switch (operation) {
-                case "pi":
-                    break;
                 case "!":
                     if (display.Text.Length != 0)
                     {
-                        display.Text = "" + Math.Fact(dispString_to_numb(display.Text));
+                        dislay_number(Math.Fact(dispString_to_numb(display.Text)));
                         insert_mode = false;
                     }
                     break;
@@ -197,7 +211,7 @@ namespace calculator
         {
             do_math_operation();
             lastOperator = "";
-            display.Text = "" + operand1;
+            dislay_number(operand1);
             insert_mode = false;
             firstTime_click = true;
         }
