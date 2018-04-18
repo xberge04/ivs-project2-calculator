@@ -30,6 +30,7 @@ namespace calculator
             firstTime_click = true;
             was_firstTime_click = false;
             lastOperator = "";
+            display.Text = "0";
         }
 
         private void display_textResize(int num_of_digits)
@@ -69,6 +70,10 @@ namespace calculator
                 text.Replace(',', '.');
                 return double.Parse(text);
             }
+            else if (text.Contains("Chyba!"))
+            {
+                return (double)0;
+            }
             else {
                 return double.Parse(text);
             }
@@ -76,31 +81,38 @@ namespace calculator
 
         private void do_math_operation()
         {
-            switch (lastOperator)
+            try
             {
-                case "+":
-                    operand1 = Math.Add(operand1, dispString_to_numb(display.Text));
-                    break;
-                case "-":
-                    operand1 = Math.Add(operand1, -(dispString_to_numb(display.Text)));
-                    break;
-                case "*":
-                    operand1 = Math.Mul(operand1, dispString_to_numb(display.Text));
-                    break;
-                case "/":
-                    operand1 = Math.Div(operand1, dispString_to_numb(display.Text));
-                    break;
-                case "power":
-                    operand1 = Math.Pow(operand1, dispString_to_numb(display.Text));
-                    break;
-                case "root":
-                    operand1 = Math.Root(operand1, dispString_to_numb(display.Text));
-                    break;
-                case "log":
-                    operand1 = Math.Log(dispString_to_numb(display.Text), operand1);
-                    break;
-                default:
-                    break;
+                switch (lastOperator)
+                {
+                    case "+":
+                        operand1 = Math.Add(operand1, dispString_to_numb(display.Text));
+                        break;
+                    case "-":
+                        operand1 = Math.Add(operand1, -(dispString_to_numb(display.Text)));
+                        break;
+                    case "*":
+                        operand1 = Math.Mul(operand1, dispString_to_numb(display.Text));
+                        break;
+                    case "/":
+                        operand1 = Math.Div(operand1, dispString_to_numb(display.Text));
+                        break;
+                    case "power":
+                        operand1 = Math.Pow(operand1, dispString_to_numb(display.Text));
+                        break;
+                    case "root":
+                        operand1 = Math.Root(operand1, dispString_to_numb(display.Text));
+                        break;
+                    case "log":
+                        operand1 = Math.Log(dispString_to_numb(display.Text), operand1);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            catch (Exception)
+            {
+                display.Text = "Chyba!";
             }
         }
 
@@ -125,8 +137,16 @@ namespace calculator
             {
                 if (insert_mode)
                 {
-                    display.Text += "" + number;
-                    display_textResize(display.Text.Length);
+                    if(display.Text.Length == 1 && display.Text[0] == '0')
+                    {
+                        display.Text =  number.ToString();
+                        display_textResize(display.Text.Length);
+                    }
+                    else
+                    {
+                        display.Text += "" + number;
+                        display_textResize(display.Text.Length);
+                    }
                 }
                 else
                 {
@@ -141,7 +161,7 @@ namespace calculator
             operand1 = 0;
             lastOperator = "";
             firstTime_click = true;
-            display.Text = "";
+            display.Text = "0";
             insert_mode = true;
         }
 
@@ -158,18 +178,25 @@ namespace calculator
         }
 
         public void one_operand_btn_click(string operation) {
-            switch (operation) {
-                case "!":
-                    if (display.Text.Length != 0)
-                    {
-                        dislay_number(Math.Fact(dispString_to_numb(display.Text)));
-                        insert_mode = false;
-                    }
-                    break;
-                default:
-                    break;
+            try
+            {
+                switch (operation)
+                {
+                    case "!":
+                        if (display.Text.Length != 0)
+                        {
+                            dislay_number(Math.Fact(dispString_to_numb(display.Text)));
+                            insert_mode = false;
+                        }
+                        break;
+                    default:
+                        break;
+                }
             }
-
+            catch(Exception)
+            {
+                display.Text = "Chyba!";
+            }
 
         }
 
