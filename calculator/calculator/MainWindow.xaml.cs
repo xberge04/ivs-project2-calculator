@@ -289,92 +289,85 @@ namespace calculator
         {
             if (e.Key == Key.NumPad0)
             {
-                CalcDo.num_btn_click(0);
+                btn_0_Click(sender, e);
                 
             }
             else if (e.Key == Key.NumPad1)
             {
-                CalcDo.num_btn_click(1);
-                
+                btn_1_Click(sender, e);
+
             }
             else if (e.Key == Key.NumPad2)
             {
-                CalcDo.num_btn_click(2);
-                
+                btn_2_Click(sender, e);
+
             }
             else if (e.Key == Key.NumPad3)
             {
-                CalcDo.num_btn_click(3);
-                
+                btn_3_Click(sender, e);
+
             }
             else if (e.Key == Key.NumPad4)
             {
-                CalcDo.num_btn_click(4);
-                
+                btn_4_Click(sender, e);
             }
             else if (e.Key == Key.NumPad5)
             {
-                CalcDo.num_btn_click(5);
-                
+                btn_5_Click(sender, e);
             }
             else if (e.Key == Key.NumPad6)
             {
-                CalcDo.num_btn_click(6);
-                
+                btn_6_Click(sender, e);
             }
             else if (e.Key == Key.NumPad7)
             {
-                CalcDo.num_btn_click(7);
-                
+                btn_7_Click(sender, e);
             }
             else if (e.Key == Key.NumPad8)
             {
-                CalcDo.num_btn_click(8);
-                
+                btn_8_Click(sender, e);
             }
             else if (e.Key == Key.NumPad9)
             {
-                CalcDo.num_btn_click(9);
-                
+                btn_9_Click(sender, e);
             }
             else if (e.Key == Key.Add)
             {
-                CalcDo.two_operand_btn_click("+");
+                btn_plus_Click(sender, e);
                 
             }
             else if (e.Key == Key.Multiply)
             {
-                CalcDo.two_operand_btn_click("*");
-                
+                btn_mul_Click(sender, e);
+
             }
             else if (e.Key == Key.Divide)
             {
-                CalcDo.two_operand_btn_click("/");
-                
+                btn_div_Click(sender, e);
+
             }
             else if (e.Key == Key.Subtract)
             {
-                CalcDo.two_operand_btn_click("-");
-                
+                btn_minus_Click(sender, e);
             }
             else if (e.Key == Key.Decimal)
             {
-                CalcDo.point_btn_click();
-                
+                btn_point_Click(sender, e);
+
             }
             else if (e.Key == Key.Return || e.Key == Key.Enter)
             {
-                CalcDo.eq_btn_click();
+                btn_eq_Click(sender, e);
             }
             else if (e.Key == Key.Back)
             {
-                CalcDo.back_arr_btn_click();
-                
+                btn_back_arr_Click(sender, e);
+
             }
             else if (e.Key == Key.Delete)
             {
-                CalcDo.c_btn_click();
-                
+                btn_C_Click(sender, e);
+
             }
         }
     }

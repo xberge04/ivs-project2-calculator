@@ -357,6 +357,164 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="ButtonStyle6" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true" CornerRadius="10">
+                            <Grid HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="60">
+                                <TextBlock HorizontalAlignment="Left" Height="27.75" Margin="39.25,0,0,0" TextWrapping="Wrap" Text="x" VerticalAlignment="Top" Width="20.75"/>
+                                <TextBlock HorizontalAlignment="Left" Height="25.75" Margin="49.75,0,0,0" TextWrapping="Wrap" Text="y" VerticalAlignment="Top" Width="10.25" FontSize="14"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ButtonStyle7" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true" CornerRadius="10">
+                            <Grid HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="60">
+                                <TextBlock HorizontalAlignment="Left" Height="28.667" TextWrapping="Wrap" VerticalAlignment="Top" Width="30.583" Foreground="#FFFF6C6C" FontSize="24" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" Margin="28.417,0,0,0"><Run FontSize="25" Text="√"/><Run Text="x"/></TextBlock>
+                                <TextBlock x:Name="___TextBlock___a_" HorizontalAlignment="Left" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" Width="13.667" Foreground="#FFFF6C6C" FontSize="14" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" Margin="29.5,-3.078,0,0"><Run Text="y"/></TextBlock>
+                                <Rectangle Fill="#FFFF6C6C" Height="Auto" RadiusY="0" RadiusX="0" Stroke="#FFFF6C6C" Width="Auto" RenderTransformOrigin="0.481,-1.117" Margin="40.536,3.54,5.588,55.089"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ButtonStyle8" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true" CornerRadius="10">
+                            <Grid HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="60">
+                                <TextBlock HorizontalAlignment="Left" Height="28.667" Margin="13.5,2.168,-3.5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Foreground="#FFFF6C6C" FontSize="24" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight"><Run Text="log "/><Run Text="x"/><Run Text=" "/></TextBlock>
+                                <TextBlock x:Name="___TextBlock___a_" HorizontalAlignment="Left" Height="15" Margin="41.67,15.524,0,0" TextWrapping="Wrap" Text="a" VerticalAlignment="Top" Width="13.667" Foreground="#FFFF6C6C" FontSize="14" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ButtonStyle9" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true" CornerRadius="10">
+                            <Grid HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="60">
+                                <TextBlock HorizontalAlignment="Left" Height="28.667" Margin="41.666,2.503,-4.666,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="23" Foreground="White" FontSize="25" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight"><Run Text="/"/><LineBreak/><Run/></TextBlock>
+                                <TextBlock HorizontalAlignment="Left" Height="18.333" Margin="46.999,4.71,-0.666,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Width="13.667" Foreground="White" FontSize="25" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight"/>
+                                <TextBlock HorizontalAlignment="Left" Height="23.666" Margin="35.667,-3.824,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" Width="13.667" Foreground="White" FontSize="25" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
     <Window.Background>
         <SolidColorBrush Color="#7F000000"/>
@@ -480,7 +638,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btn_invert" Content="+/-" HorizontalAlignment="Left" Width="60" Margin="0,0,0,280" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" BorderBrush="{x:Null}" Foreground="White" VerticalAlignment="Bottom" Style="{DynamicResource ButtonStyle5}" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" FontSize="25" Click="btn_invert_Click">
+            <Button x:Name="btn_invert" Content="+/-" HorizontalAlignment="Left" Width="60" Margin="0,0,0,280" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" BorderBrush="{x:Null}" Foreground="White" VerticalAlignment="Bottom" Style="{DynamicResource ButtonStyle9}" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" FontSize="25" Click="btn_invert_Click">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -510,7 +668,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btn_log" Content="log" HorizontalAlignment="Left" Width="60" Margin="70,0,0,280" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" Foreground="#FFFF6C6C" BorderBrush="#FF666666" VerticalAlignment="Bottom" Style="{DynamicResource ButtonStyle3}" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" FontSize="25" Click="btn_log_Click">
+            <Button x:Name="btn_log" Content="log" HorizontalAlignment="Left" Width="60" Margin="70,0,0,280" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" Foreground="#FFFF6C6C" BorderBrush="#FF666666" VerticalAlignment="Bottom" Style="{DynamicResource ButtonStyle8}" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" FontSize="25" Click="btn_log_Click">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -570,7 +728,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btn_sqrt" Content='√' HorizontalAlignment="Left" Width="60" Margin="210,0,0,280" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" Foreground="#FFFF6C6C" BorderBrush="#FF666666" VerticalAlignment="Bottom" Style="{DynamicResource ButtonStyle4}" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" FontSize="25" Click="btn_sqrt_Click">
+            <Button x:Name="btn_sqrt" Content='√' HorizontalAlignment="Left" Width="60" Margin="210,0,0,280" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" Foreground="#FFFF6C6C" BorderBrush="#FF666666" VerticalAlignment="Bottom" Style="{DynamicResource ButtonStyle7}" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" FontSize="25" Click="btn_sqrt_Click">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -597,7 +755,16 @@
                         <GradientStop Color="Black" Offset="1"/>
                     </LinearGradientBrush>
                 </TextBlock.Foreground></TextBlock>
-            <Button x:Name="btn_pow"  HorizontalAlignment="Left" Height="60" Margin="280,70,0,0" VerticalAlignment="Top" Width="60" Style="{DynamicResource ButtonStyle1}"/>
+            <Button x:Name="btn_pow" Content="(x)y" HorizontalAlignment="Left" Width="60" Margin="280,0,0,280" BorderThickness="0" Height="60" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" Foreground="#FFFF6C6C" BorderBrush="#FF666666" VerticalAlignment="Bottom" Style="{DynamicResource ButtonStyle6}" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" FontSize="25" Click="btn_pow_Click">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
         </Grid>
     </Grid>
 </Window>
