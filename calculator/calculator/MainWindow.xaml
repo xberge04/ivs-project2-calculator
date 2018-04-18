@@ -1,11 +1,11 @@
-﻿<Window x:Name="Calculator_view" x:Class="calculator.MainWindow"
+﻿<Window    x:Name="Calculator_view" x:Class="calculator.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:calculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="360" HorizontalAlignment="Center" ResizeMode="NoResize" Foreground="{x:Null}" Style="{DynamicResource Window_main_style}" VerticalAlignment="Center" AllowsTransparency="True" WindowStyle="None" MouseLeftButtonDown="Calculator_view_MouseLeftButtonDown">
+        Title="Kalkulačka" Height="450" Width="360"  KeyDown="Grid_KeyUp" HorizontalAlignment="Center" ResizeMode="NoResize" Foreground="{x:Null}" Style="{DynamicResource Window_main_style}" VerticalAlignment="Center" AllowsTransparency="True" WindowStyle="None" MouseLeftButtonDown="Calculator_view_MouseLeftButtonDown">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -38,7 +38,7 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true" CornerRadius="10">
-                            <ContentPresenter x:Name="contentPresenter" Focusable="False" Margin="0,0,5,0" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" Margin="0,0,5,0" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="Right" VerticalAlignment="Top" IsEnabled="False"/>
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsDefaulted" Value="true">
@@ -179,6 +179,184 @@
             <Setter Property="TextWrapping" Value="NoWrap"/>
             <Setter Property="TextTrimming" Value="None"/>
         </Style>
+        <Style x:Key="btn_pow" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid x:Name="border" Background="{TemplateBinding Background}" SnapsToDevicePixels="true" >
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" Margin="0,0,5,0" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                            <TextBlock HorizontalAlignment="Left" Height="30.5" Margin="50,0,-4.5,0" TextWrapping="Wrap" Text="y" VerticalAlignment="Top" Width="14.5" FontSize="14"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true"/>
+                            <Trigger Property="IsMouseOver" Value="true"/>
+                            <Trigger Property="IsPressed" Value="true"/>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid x:Name="border" SnapsToDevicePixels="true">
+                            <Rectangle HorizontalAlignment="Left" Height="60" Margin="0" VerticalAlignment="Top" Width="60" RadiusY="7.333" RadiusX="7.333" OpacityMask="{x:Null}" Stroke="#FF1A1A1A" Fill="#FF1A1A1A"/>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="12.188,22.02" OpacityMask="#FFFF6C6C"/>
+                            <TextBlock HorizontalAlignment="Left" Height="28.667" Margin="37,-1.332,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="23" Foreground="#FFFF6C6C" FontSize="24" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight"><Run Text="x"/><Run Text=" "/></TextBlock>
+                            <TextBlock HorizontalAlignment="Left" Height="15" Margin="46.333,-1.332,0,0" TextWrapping="Wrap" Text="y" VerticalAlignment="Top" Width="13.667" Foreground="#FFFF6C6C" FontSize="14" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true"/>
+                            <Trigger Property="IsMouseOver" Value="true"/>
+                            <Trigger Property="IsPressed" Value="true"/>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ButtonStyle2" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true" CornerRadius="10">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" Margin="0,0,5,0" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="Right" VerticalAlignment="Top" IsEnabled="False"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ButtonStyle3" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid x:Name="border" SnapsToDevicePixels="true">
+                            <Rectangle HorizontalAlignment="Left" Height="60" Margin="0" VerticalAlignment="Top" Width="60" RadiusY="7.333" RadiusX="7.333" OpacityMask="{x:Null}" Stroke="#FF1A1A1A" Fill="#FF1A1A1A"/>
+                            <TextBlock HorizontalAlignment="Left" Height="28.667" Margin="10,-1.332,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Foreground="#FFFF6C6C" FontSize="24" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight"><Run Text="log "/><Run Text="x"/><Run Text=" "/></TextBlock>
+                            <TextBlock x:Name="___TextBlock___a_" HorizontalAlignment="Left" Height="15" Margin="38.17,12.024,0,0" TextWrapping="Wrap" Text="a" VerticalAlignment="Top" Width="13.667" Foreground="#FFFF6C6C" FontSize="14" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true"/>
+                            <Trigger Property="IsMouseOver" Value="true"/>
+                            <Trigger Property="IsPressed" Value="true"/>
+                            <Trigger Property="IsEnabled" Value="false"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ButtonStyle4" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid x:Name="border" SnapsToDevicePixels="true">
+                            <Rectangle x:Name="Button" HorizontalAlignment="Left" Height="60" Margin="0" VerticalAlignment="Top" Width="60" RadiusY="7.333" RadiusX="7.333" OpacityMask="{x:Null}" Stroke="#FF1A1A1A" Fill="#FF1A1A1A"/>
+                            <TextBlock HorizontalAlignment="Left" Height="28.667" TextWrapping="Wrap" VerticalAlignment="Top" Width="30.583" Foreground="#FFFF6C6C" FontSize="24" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" Margin="29.417,-1.332,0,0"><Run FontSize="25" Text="√"/><Run Text="x"/></TextBlock>
+                            <TextBlock x:Name="___TextBlock___a_" HorizontalAlignment="Left" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" Width="13.667" Foreground="#FFFF6C6C" FontSize="14" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" Margin="30.5,-4.41,0,0"><Run Text="y"/></TextBlock>
+                            <Rectangle Fill="#FFFF6C6C" Height="Auto" RadiusY="0" RadiusX="0" Stroke="#FFFF6C6C" Width="Auto" RenderTransformOrigin="0.481,-1.117" Margin="41.536,3.454,2.776,55.546"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true"/>
+                            <Trigger Property="IsMouseOver" Value="true"/>
+                            <Trigger Property="IsPressed" Value="true"/>
+                            <Trigger Property="IsEnabled" Value="false"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ButtonStyle5" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid x:Name="border" SnapsToDevicePixels="true">
+                            <Rectangle HorizontalAlignment="Left" Height="60" Margin="0" VerticalAlignment="Top" Width="60" RadiusY="7.333" RadiusX="7.333" OpacityMask="{x:Null}" Stroke="#FF1A1A1A" Fill="#FF1A1A1A"/>
+                            <TextBlock HorizontalAlignment="Left" Height="28.667" Margin="41.666,-0.997,-4.666,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="23" Foreground="White" FontSize="25" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight"><Run Text="/"/><LineBreak/><Run/></TextBlock>
+                            <TextBlock HorizontalAlignment="Left" Height="18.333" Margin="46.999,1.21,-0.666,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Width="13.667" Foreground="White" FontSize="25" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight"/>
+                            <TextBlock HorizontalAlignment="Left" Height="23.666" Margin="35.667,-7.324,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" Width="13.667" Foreground="White" FontSize="25" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true"/>
+                            <Trigger Property="IsMouseOver" Value="true"/>
+                            <Trigger Property="IsPressed" Value="true"/>
+                            <Trigger Property="IsEnabled" Value="false"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
     <Window.Background>
         <SolidColorBrush Color="#7F000000"/>
@@ -302,7 +480,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btn_invert" Content="+/-" HorizontalAlignment="Left" Width="60" Margin="0,0,0,280" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" BorderBrush="{x:Null}" Foreground="White" VerticalAlignment="Bottom" Style="{DynamicResource Button_num_style}" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" FontSize="25" Click="btn_invert_Click">
+            <Button x:Name="btn_invert" Content="+/-" HorizontalAlignment="Left" Width="60" Margin="0,0,0,280" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" BorderBrush="{x:Null}" Foreground="White" VerticalAlignment="Bottom" Style="{DynamicResource ButtonStyle5}" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" FontSize="25" Click="btn_invert_Click">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -332,7 +510,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btn_log" Content="log" HorizontalAlignment="Left" Width="60" Margin="70,0,0,280" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" Foreground="#FFFF6C6C" BorderBrush="#FF666666" VerticalAlignment="Bottom" Style="{DynamicResource Button_num_style}" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" FontSize="25" Click="btn_log_Click">
+            <Button x:Name="btn_log" Content="log" HorizontalAlignment="Left" Width="60" Margin="70,0,0,280" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" Foreground="#FFFF6C6C" BorderBrush="#FF666666" VerticalAlignment="Bottom" Style="{DynamicResource ButtonStyle3}" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" FontSize="25" Click="btn_log_Click">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -392,7 +570,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btn_pow" Content="(x)y" HorizontalAlignment="Left" Width="60" Margin="280,0,0,280" BorderThickness="0" Height="60" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" Foreground="#FFFF6C6C" BorderBrush="#FF666666" VerticalAlignment="Bottom" Style="{DynamicResource Button_num_style}" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" FontSize="25" Click="btn_pow_Click">
+            <Button x:Name="btn_sqrt" Content='√' HorizontalAlignment="Left" Width="60" Margin="210,0,0,280" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" Foreground="#FFFF6C6C" BorderBrush="#FF666666" VerticalAlignment="Bottom" Style="{DynamicResource ButtonStyle4}" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" FontSize="25" Click="btn_sqrt_Click">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -402,17 +580,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btn_sqrt" Content='√' HorizontalAlignment="Left" Width="60" Margin="210,0,0,280" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" Foreground="#FFFF6C6C" BorderBrush="#FF666666" VerticalAlignment="Bottom" Style="{DynamicResource Button_num_style}" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" FontSize="25" Click="btn_sqrt_Click">
-                <Button.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Button.RenderTransform>
-            </Button>
-            <Button x:Name="btn_fact" Content="!" HorizontalAlignment="Left" Width="60" Margin="140,0,0,280" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" Foreground="#FFFF6C6C" BorderBrush="{x:Null}" VerticalAlignment="Bottom" Style="{DynamicResource Button_num_style}" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" FontSize="25" Click="btn_fact_Click">
+            <Button x:Name="btn_fact" Content="x!" HorizontalAlignment="Left" Width="60" Margin="140,0,0,280" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" Foreground="#FFFF6C6C" BorderBrush="{x:Null}" VerticalAlignment="Bottom" Style="{DynamicResource Button_num_style}" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" FontSize="25" Click="btn_fact_Click">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -429,6 +597,7 @@
                         <GradientStop Color="Black" Offset="1"/>
                     </LinearGradientBrush>
                 </TextBlock.Foreground></TextBlock>
+            <Button x:Name="btn_pow"  HorizontalAlignment="Left" Height="60" Margin="280,70,0,0" VerticalAlignment="Top" Width="60" Style="{DynamicResource ButtonStyle1}"/>
         </Grid>
     </Grid>
 </Window>
