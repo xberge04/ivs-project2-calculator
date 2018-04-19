@@ -61,66 +61,77 @@ namespace calculator
             CalcDo.num_btn_click(0);
             turnOff_all_borders();
             lastSelected = null;
+            Keyboard.Focus(btn_eq);
         }
         private void btn_1_Click(object sender, RoutedEventArgs e)
         {
             CalcDo.num_btn_click(1);
             turnOff_all_borders();
             lastSelected = null;
+            Keyboard.Focus(btn_eq);
         }
         private void btn_2_Click(object sender, RoutedEventArgs e)
         {
             CalcDo.num_btn_click(2);
             turnOff_all_borders();
             lastSelected = null;
+            Keyboard.Focus(btn_eq);
         }
         private void btn_3_Click(object sender, RoutedEventArgs e)
         {
             CalcDo.num_btn_click(3);
             turnOff_all_borders();
             lastSelected = null;
+            Keyboard.Focus(btn_eq);
         }
         private void btn_4_Click(object sender, RoutedEventArgs e)
         {
             CalcDo.num_btn_click(4);
             turnOff_all_borders();
             lastSelected = null;
+            Keyboard.Focus(btn_eq);
         }
         private void btn_5_Click(object sender, RoutedEventArgs e)
         {
             CalcDo.num_btn_click(5);
             turnOff_all_borders();
             lastSelected = null;
+            Keyboard.Focus(btn_eq);
         }
         private void btn_6_Click(object sender, RoutedEventArgs e)
         {
             CalcDo.num_btn_click(6);
             turnOff_all_borders();
             lastSelected = null;
+            Keyboard.Focus(btn_eq);
         }
         private void btn_7_Click(object sender, RoutedEventArgs e)
         {
             CalcDo.num_btn_click(7);
             turnOff_all_borders();
             lastSelected = null;
+            Keyboard.Focus(btn_eq);
         }
         private void btn_8_Click(object sender, RoutedEventArgs e)
         {
             CalcDo.num_btn_click(8);
             turnOff_all_borders();
             lastSelected = null;
+            Keyboard.Focus(btn_eq);
         }
         private void btn_9_Click(object sender, RoutedEventArgs e)
         {
             CalcDo.num_btn_click(9);
             turnOff_all_borders();
             lastSelected = null;
+            Keyboard.Focus(btn_eq);
         }
         //*****************************************************************************************************************************
 
         private void btn_point_Click(object sender, RoutedEventArgs e)
         {
             CalcDo.point_btn_click();
+            Keyboard.Focus(btn_eq);
         }
 
         private void btn_C_Click(object sender, RoutedEventArgs e)
@@ -129,11 +140,13 @@ namespace calculator
             CalcDo.c_btn_click();
             lastSelected = null;
             evenClick = false;
+            Keyboard.Focus(btn_eq);
         }
 
         private void btn_back_arr_Click(object sender, RoutedEventArgs e)
         {
             CalcDo.back_arr_btn_click();
+            Keyboard.Focus(btn_eq);
         }
 
         private void btn_eq_Click(object sender, RoutedEventArgs e)
@@ -151,6 +164,7 @@ namespace calculator
             CalcDo.one_operand_btn_click("!");
             lastSelected = null;
             turnOff_all_borders();
+            Keyboard.Focus(btn_eq);
         }
         //****************************************************************************************************************************
         //two operand functions
@@ -164,12 +178,14 @@ namespace calculator
                 lastSelected = btn_plus;
                 turnOn_this_border(btn_plus);
                 CalcDo.two_operand_btn_click("+");
+                Keyboard.Focus(btn_eq);
             }
             
             else if (evenClick && lastSelected == btn_plus) //this.tlačitko už je zaškrtnuté a odškrtne se
             {
                 lastSelected = null;
                 CalcDo.two_operand_btn_click("");
+                Keyboard.Focus(btn_eq);
             }
         }
 
@@ -182,12 +198,14 @@ namespace calculator
                 lastSelected = btn_minus;
                 turnOn_this_border(btn_minus);
                 CalcDo.two_operand_btn_click("-");
+                Keyboard.Focus(btn_eq);
             }
 
             else if (evenClick && lastSelected == btn_minus) //this.tlačitko je zaškrtnuté
             {
                 lastSelected = null;
                 CalcDo.two_operand_btn_click("");
+                Keyboard.Focus(btn_eq);
             }
         }
 
@@ -200,12 +218,14 @@ namespace calculator
                 lastSelected = btn_mul;
                 turnOn_this_border(btn_mul);
                 CalcDo.two_operand_btn_click("*");
+                Keyboard.Focus(btn_eq);
             }
 
             else if (evenClick && lastSelected == btn_mul) //this.tlačitko je zaškrtnuté
             {
                 lastSelected = null;
                 CalcDo.two_operand_btn_click("");
+                Keyboard.Focus(btn_eq);
             }
         }
 
@@ -218,12 +238,14 @@ namespace calculator
                 lastSelected = btn_div;
                 turnOn_this_border(btn_div);
                 CalcDo.two_operand_btn_click("/");
+                Keyboard.Focus(btn_eq);
             }
 
             else if (evenClick && lastSelected == btn_div) //this.tlačitko je zaškrtnuté
             {
                 lastSelected = null;
                 CalcDo.two_operand_btn_click("");
+                Keyboard.Focus(btn_eq);
             }
         }
 
@@ -235,13 +257,15 @@ namespace calculator
                 evenClick = true; //numisí být
                 lastSelected = btn_pow;
                 turnOn_this_border(btn_pow);
-                CalcDo.two_operand_btn_click("**");
+                CalcDo.two_operand_btn_click("*");
+                Keyboard.Focus(btn_eq);
             }
 
             else if (evenClick && lastSelected == btn_pow) //this.tlačitko je zaškrtnuté
             {
                 lastSelected = null;
                 CalcDo.two_operand_btn_click("");
+                Keyboard.Focus(btn_eq);
             }
         }
 
@@ -254,12 +278,14 @@ namespace calculator
                 lastSelected = btn_sqrt;
                 turnOn_this_border(btn_sqrt);
                 CalcDo.two_operand_btn_click("/");
+                Keyboard.Focus(btn_eq);
             }
 
             else if (evenClick && lastSelected == btn_sqrt) //this.tlačitko je zaškrtnuté
             {
                 lastSelected = null;
                 CalcDo.two_operand_btn_click("");
+                Keyboard.Focus(btn_eq);
             }
         }
 
@@ -272,12 +298,14 @@ namespace calculator
                 lastSelected = btn_log;
                 turnOn_this_border(btn_log);
                 CalcDo.two_operand_btn_click("log");
+                Keyboard.Focus(btn_eq);
             }
 
             else if (evenClick && lastSelected == btn_log) //this.tlačitko je zaškrtnuté
             {
                 lastSelected = null;
                 CalcDo.two_operand_btn_click("");
+                Keyboard.Focus(btn_eq);
             }
         }
         //***********************************************************************************************************************
@@ -289,6 +317,7 @@ namespace calculator
         private void btn_invert_Click(object sender, RoutedEventArgs e)
         {
             CalcDo.num_invert_brn();
+            Keyboard.Focus(btn_eq);
         }
 
         private void Calculator_view_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

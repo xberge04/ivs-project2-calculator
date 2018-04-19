@@ -70,10 +70,6 @@ namespace calculator
                 text.Replace(',', '.');
                 return double.Parse(text);
             }
-            else if (text.Contains("Chyba!"))
-            {
-                return (double)0;
-            }
             else {
                 return double.Parse(text);
             }
@@ -81,8 +77,6 @@ namespace calculator
 
         private void do_math_operation()
         {
-            try
-            {
                 switch (lastOperator)
                 {
                     case "+":
@@ -108,50 +102,55 @@ namespace calculator
                         break;
                     default:
                         break;
-                }
-            }
-            catch (Exception)
-            {
-                display.Text = "Chyba!";
             }
         }
 
         public void num_invert_brn()
         {
-            display.Text = "" + -(dispString_to_numb(display.Text));
+            if (display.Text != "Chyba!")
+                display.Text = "" + -(dispString_to_numb(display.Text));
         }
 
         public void num_btn_click(int number)
         {
-            if (number == 0)
+            if (display.Text != "Chyba!")
             {
-                if (insert_mode)
+                if (number == 0)
                 {
-                    if (display.Text.Length == 1 && display.Text[0] == '0') // v případě, že již je zadaná 0, jako prvni znak nejde přidat další
-                        return;
-                    display.Text += "0";
-                    display_textResize(display.Text.Length);
-                }
-            }
-            else
-            {
-                if (insert_mode)
-                {
-                    if(display.Text.Length == 1 && display.Text[0] == '0')
+                    if (insert_mode)
                     {
-                        display.Text =  number.ToString();
+                        if (display.Text.Length == 1 && display.Text[0] == '0') // v případě, že již je zadaná 0, jako prvni znak nejde přidat další
+                            return;
+                        display.Text += "0";
                         display_textResize(display.Text.Length);
                     }
                     else
                     {
-                        display.Text += "" + number;
+                        display.Text = 0.ToString();
                         display_textResize(display.Text.Length);
+                        insert_mode = true;
                     }
                 }
                 else
                 {
-                    display.Text = "" + number;
-                    insert_mode = true;
+                    if (insert_mode)
+                    {
+                        if (display.Text.Length == 1 && display.Text[0] == '0')
+                        {
+                            display.Text = number.ToString();
+                            display_textResize(display.Text.Length);
+                        }
+                        else
+                        {
+                            display.Text += "" + number;
+                            display_textResize(display.Text.Length);
+                        }
+                    }
+                    else
+                    {
+                        display.Text = "" + number;
+                        insert_mode = true;
+                    }
                 }
             }
         }
@@ -167,80 +166,99 @@ namespace calculator
 
         public void back_arr_btn_click()
         {
-            if (display.Text.Length > 0)
-                display.Text = display.Text.Remove(display.Text.Length - 1);
+            if (display.Text != "Chyba!")
+                if (display.Text.Length > 0)
+                    display.Text = display.Text.Remove(display.Text.Length - 1);
         } 
 
         public void point_btn_click()
         {
-            if (insert_mode && display.Text.Length > 0 && !display.Text.Contains(','))
-                display.Text += ",";
+            if (display.Text != "Chyba!")
+                if (insert_mode && display.Text.Length > 0 && !display.Text.Contains(','))
+                    display.Text += ",";
         }
 
         public void one_operand_btn_click(string operation) {
-            try
+            if (display.Text != "Chyba!")
             {
-                switch (operation)
+                try
                 {
-                    case "!":
-                        if (display.Text.Length != 0)
-                        {
-                            dislay_number(Math.Fact(dispString_to_numb(display.Text)));
-                            insert_mode = false;
-                        }
-                        break;
-                    default:
-                        break;
+                    switch (operation)
+                    {
+                        case "!":
+                            if (display.Text.Length != 0)
+                            {
+                                dislay_number(Math.Fact(dispString_to_numb(display.Text)));
+                                insert_mode = false;
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                catch (Exception)
+                {
+                    display.Text = "Chyba!";
+                    return;
                 }
             }
-            catch(Exception)
-            {
-                display.Text = "Chyba!";
-            }
-
         }
 
         public void two_operand_btn_click(string operation)
         {
-            if (operation == "")
+            if (display.Text != "Chyba!")
             {
-                if (was_firstTime_click)
+                if (operation == "")
                 {
-                    firstTime_click = true;
-                    was_firstTime_click = false;
-                }
-                lastOperator = "";
-                insert_mode = true;
-            }
-            else
-            {
-                if (firstTime_click)
-                {
-                    operand1 = dispString_to_numb(display.Text);
-                    firstTime_click = false;
-                    insert_mode = false;
-                    was_firstTime_click = true;
-                    lastOperator = operation;
+                    if (was_firstTime_click)
+                    {
+                        firstTime_click = true;
+                        was_firstTime_click = false;
+                    }
+                    lastOperator = "";
+                    insert_mode = true;
                 }
                 else
                 {
-                    do_math_operation();
-                    lastOperator = operation;
-                    display.Text = "" + operand1;
-                    insert_mode = false;
-                    was_firstTime_click = false;
+                    if (firstTime_click)
+                    {
+                        operand1 = dispString_to_numb(display.Text);
+                        firstTime_click = false;
+                        insert_mode = false;
+                        was_firstTime_click = true;
+                        lastOperator = operation;
+                    }
+                    else
+                    {
+                        do_math_operation();
+                        lastOperator = operation;
+                        display.Text = "" + operand1;
+                        insert_mode = false;
+                        was_firstTime_click = false;
+                    }
+
                 }
-                
             }
         }
 
         public void eq_btn_click()
         {
-            do_math_operation();
-            lastOperator = "";
-            dislay_number(operand1);
-            insert_mode = false;
-            firstTime_click = true;
+            if (display.Text != "Chyba!")
+            {
+                try
+                {
+                    do_math_operation();
+                    lastOperator = "";
+                    dislay_number(operand1);
+                    insert_mode = false;
+                    firstTime_click = true;
+                }
+                catch (Exception)
+                {
+                    display.Text = "Chyba!";
+                    return;
+                }
+            }
         }
     }
 }
