@@ -134,7 +134,12 @@ namespace calculator.Math_Library
         public ulong Fact(double num1)
         {
             ulong result = (ulong)num1;
-            if (num1 > 0 && num1 % 1 == 0)
+            if (num1 > 65)
+            {
+                throw new ArgumentOutOfRangeException();
+                return result;
+            }
+            else if (num1 > 0 && num1 % 1 == 0)
             {
                 for (ulong i = ((ulong)num1 - 1); i >= 1; i--)
                 {

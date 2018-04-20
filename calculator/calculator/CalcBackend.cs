@@ -45,7 +45,7 @@ namespace calculator
             }
         }
 
-        private void show_number(double number)
+        private void dislay_number(double number)
         {
             display.FontSize = 36;
             display.Text = "" + number;
@@ -167,19 +167,35 @@ namespace calculator
         public void back_arr_btn_click()
         {
             if (display.Text != "Chyba!")
-                if (display.Text.Length > 0)
-                    if (display.Text[display.Text.Length - 4] == 'E')
-                        if (display.Text.Length > 5)
-                            show_number(dispString_to_numb(display.Text.Remove(display.Text.Length - 5, 1)));
-                        else
-                            return;
-                    else if (display.Text[display.Text.Length - 5] == 'E')
+                if (display.Text.Length >= 0)
+                {
+                    if (display.Text.Length >= 5)
+                    {
+                        if (display.Text[display.Text.Length - 4] == 'E')
+                        {
+                            if (display.Text.Length > 5)
+                                display.Text = display.Text.Remove(display.Text.Length - 5, 1);
+                                if (display.Text[display.Text.Length - 4] != 'E')
+                                    display.Text = display.Text.Remove(display.Text.Length - 1);
+                        }
+                        else if (display.Text[display.Text.Length - 5] == 'E')
+                        {
                             if (display.Text.Length > 6)
-                                show_number(dispString_to_numb(display.Text.Remove(display.Text.Length - 6, 1)));
+                                display.Text = display.Text.Remove(display.Text.Length - 6, 1);
+                                if (display.Text[display.Text.Length - 5] != 'E')
+                                    display.Text = display.Text.Remove(display.Text.Length - 1);
+                        } 
                         else
-                                return;
-                        else
-                            show_number(dispString_to_numb(display.Text.Remove(display.Text.Length - 1)));
+                            display.Text = display.Text.Remove(display.Text.Length - 1);
+                    }
+                    else if (display.Text.Length < 5 && display.Text.Length > 1)
+                        display.Text = display.Text.Remove(display.Text.Length - 1);
+                    else if (display.Text.Length == 1)
+                    {
+                        display.Text = "0";
+                    }
+                }
+            
         } 
 
         public void point_btn_click()
@@ -199,7 +215,7 @@ namespace calculator
                         case "!":
                             if (display.Text.Length != 0)
                             {
-                                show_number(Math.Fact(dispString_to_numb(display.Text)));
+                                dislay_number(Math.Fact(dispString_to_numb(display.Text)));
                                 insert_mode = false;
                             }
                             break;
@@ -260,7 +276,7 @@ namespace calculator
                 {
                     do_math_operation();
                     lastOperator = "";
-                    show_number(operand1);
+                    dislay_number(operand1);
                     insert_mode = false;
                     firstTime_click = true;
                 }
