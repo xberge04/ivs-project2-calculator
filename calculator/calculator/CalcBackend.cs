@@ -168,7 +168,18 @@ namespace calculator
         {
             if (display.Text != "Chyba!")
                 if (display.Text.Length > 0)
-                    display.Text = display.Text.Remove(display.Text.Length - 1);
+                    if (display.Text[display.Text.Length - 4] == 'E')
+                        if (display.Text.Length > 5)
+                            display.Text = display.Text.Remove(display.Text.Length - 5, 1);
+                        else
+                            return;
+                    else if (display.Text[display.Text.Length - 5] == 'E')
+                            if (display.Text.Length > 6)
+                                display.Text = display.Text.Remove(display.Text.Length - 6, 1);
+                        else
+                                return;
+                        else
+                            display.Text = display.Text.Remove(display.Text.Length - 1);
         } 
 
         public void point_btn_click()
