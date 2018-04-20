@@ -167,19 +167,35 @@ namespace calculator
         public void back_arr_btn_click()
         {
             if (display.Text != "Chyba!")
-                if (display.Text.Length > 0)
-                    if (display.Text[display.Text.Length - 4] == 'E')
-                        if (display.Text.Length > 5)
-                            display.Text = display.Text.Remove(display.Text.Length - 5, 1);
-                        else
-                            return;
-                    else if (display.Text[display.Text.Length - 5] == 'E')
+                if (display.Text.Length >= 0)
+                {
+                    if (display.Text.Length >= 5)
+                    {
+                        if (display.Text[display.Text.Length - 4] == 'E')
+                        {
+                            if (display.Text.Length > 5)
+                                display.Text = display.Text.Remove(display.Text.Length - 5, 1);
+                                if (display.Text[display.Text.Length - 4] != 'E')
+                                    display.Text = display.Text.Remove(display.Text.Length - 1);
+                        }
+                        else if (display.Text[display.Text.Length - 5] == 'E')
+                        {
                             if (display.Text.Length > 6)
                                 display.Text = display.Text.Remove(display.Text.Length - 6, 1);
-                        else
-                                return;
+                                if (display.Text[display.Text.Length - 5] != 'E')
+                                    display.Text = display.Text.Remove(display.Text.Length - 1);
+                        } 
                         else
                             display.Text = display.Text.Remove(display.Text.Length - 1);
+                    }
+                    else if (display.Text.Length < 5 && display.Text.Length > 1)
+                        display.Text = display.Text.Remove(display.Text.Length - 1);
+                    else if (display.Text.Length == 1)
+                    {
+                        display.Text = "0";
+                    }
+                }
+            
         } 
 
         public void point_btn_click()
