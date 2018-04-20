@@ -25,6 +25,7 @@ namespace calculator
         Thickness ThicOFF; // konstanta uchovávající šířku rámečku zvoleného tlačítka
         Button lastSelected; //proměná uchovávající poslední zvolenou operaci
         bool evenClick; //proměná uchovávající sude/liché kliknutí; sudé = true, liché= false
+        bool operatorClicked; //proměnná uchovávající, zda je zmáčknuté tlačítko operátoru 
 
         public MainWindow()
         {
@@ -34,6 +35,7 @@ namespace calculator
             ThickON = new Thickness(2);
             ThicOFF = new Thickness(0);
             evenClick = false;
+            operatorClicked = false;
         }
 
         //vypiná označení všech tlačítek, nastavuje BorderThickness = 0
@@ -62,6 +64,7 @@ namespace calculator
             turnOff_all_borders();
             lastSelected = null;
             Keyboard.Focus(btn_eq);
+            operatorClicked = false;
         }
         private void btn_1_Click(object sender, RoutedEventArgs e)
         {
@@ -69,6 +72,7 @@ namespace calculator
             turnOff_all_borders();
             lastSelected = null;
             Keyboard.Focus(btn_eq);
+            operatorClicked = false;
         }
         private void btn_2_Click(object sender, RoutedEventArgs e)
         {
@@ -76,6 +80,7 @@ namespace calculator
             turnOff_all_borders();
             lastSelected = null;
             Keyboard.Focus(btn_eq);
+            operatorClicked = false;
         }
         private void btn_3_Click(object sender, RoutedEventArgs e)
         {
@@ -83,6 +88,7 @@ namespace calculator
             turnOff_all_borders();
             lastSelected = null;
             Keyboard.Focus(btn_eq);
+            operatorClicked = false;
         }
         private void btn_4_Click(object sender, RoutedEventArgs e)
         {
@@ -90,6 +96,7 @@ namespace calculator
             turnOff_all_borders();
             lastSelected = null;
             Keyboard.Focus(btn_eq);
+            operatorClicked = false;
         }
         private void btn_5_Click(object sender, RoutedEventArgs e)
         {
@@ -97,6 +104,7 @@ namespace calculator
             turnOff_all_borders();
             lastSelected = null;
             Keyboard.Focus(btn_eq);
+            operatorClicked = false;
         }
         private void btn_6_Click(object sender, RoutedEventArgs e)
         {
@@ -104,6 +112,7 @@ namespace calculator
             turnOff_all_borders();
             lastSelected = null;
             Keyboard.Focus(btn_eq);
+            operatorClicked = false;
         }
         private void btn_7_Click(object sender, RoutedEventArgs e)
         {
@@ -111,6 +120,7 @@ namespace calculator
             turnOff_all_borders();
             lastSelected = null;
             Keyboard.Focus(btn_eq);
+            operatorClicked = false;
         }
         private void btn_8_Click(object sender, RoutedEventArgs e)
         {
@@ -118,6 +128,7 @@ namespace calculator
             turnOff_all_borders();
             lastSelected = null;
             Keyboard.Focus(btn_eq);
+            operatorClicked = false;
         }
         private void btn_9_Click(object sender, RoutedEventArgs e)
         {
@@ -125,6 +136,7 @@ namespace calculator
             turnOff_all_borders();
             lastSelected = null;
             Keyboard.Focus(btn_eq);
+            operatorClicked = false;
         }
         //*****************************************************************************************************************************
 
@@ -141,6 +153,7 @@ namespace calculator
             lastSelected = null;
             evenClick = false;
             Keyboard.Focus(btn_eq);
+            operatorClicked = false;
         }
 
         private void btn_back_arr_Click(object sender, RoutedEventArgs e)
@@ -155,6 +168,7 @@ namespace calculator
             lastSelected = null;
             evenClick = false;
             turnOff_all_borders();
+            operatorClicked = false;
         }
         //****************************************************************************************************************************
         //one opetand functions
@@ -165,147 +179,177 @@ namespace calculator
             lastSelected = null;
             turnOff_all_borders();
             Keyboard.Focus(btn_eq);
+            operatorClicked = false;
         }
         //****************************************************************************************************************************
         //two operand functions
         //****************************************************************************************************************************
+        
         private void btn_plus_Click(object sender, RoutedEventArgs e)
         {
-            turnOff_all_borders();
-            if (lastSelected != btn_plus) //kliknutí z jiné položky a zaškrtnutí současné
+            if (!operatorClicked)
             {
-                evenClick = true; 
-                lastSelected = btn_plus;
-                turnOn_this_border(btn_plus);
-                CalcDo.two_operand_btn_click("+");
-                Keyboard.Focus(btn_eq);
-            }
-            
-            else if (evenClick && lastSelected == btn_plus) //this.tlačitko už je zaškrtnuté a odškrtne se
-            {
-                lastSelected = null;
-                CalcDo.two_operand_btn_click("");
-                Keyboard.Focus(btn_eq);
+                turnOff_all_borders();
+                if (lastSelected != btn_plus) //kliknutí z jiné položky a zaškrtnutí současné
+                {
+                    evenClick = true;
+                    lastSelected = btn_plus;
+                    turnOn_this_border(btn_plus);
+                    CalcDo.two_operand_btn_click("+");
+                    Keyboard.Focus(btn_eq);
+                }
+
+                else if (evenClick && lastSelected == btn_plus) //this.tlačitko už je zaškrtnuté a odškrtne se
+                {
+                    lastSelected = null;
+                    CalcDo.two_operand_btn_click("");
+                    Keyboard.Focus(btn_eq);
+                }
+                operatorClicked = true;
             }
         }
 
         private void btn_minus_Click(object sender, RoutedEventArgs e)
         {
-            turnOff_all_borders();
-            if (lastSelected != btn_minus) //kliknutí z jiné položky
+            if (!operatorClicked)
             {
-                evenClick = true; //numisí být
-                lastSelected = btn_minus;
-                turnOn_this_border(btn_minus);
-                CalcDo.two_operand_btn_click("-");
-                Keyboard.Focus(btn_eq);
-            }
+                turnOff_all_borders();
+                if (lastSelected != btn_minus) //kliknutí z jiné položky
+                {
+                    evenClick = true; //numisí být
+                    lastSelected = btn_minus;
+                    turnOn_this_border(btn_minus);
+                    CalcDo.two_operand_btn_click("-");
+                    Keyboard.Focus(btn_eq);
+                }
 
-            else if (evenClick && lastSelected == btn_minus) //this.tlačitko je zaškrtnuté
-            {
-                lastSelected = null;
-                CalcDo.two_operand_btn_click("");
-                Keyboard.Focus(btn_eq);
+                else if (evenClick && lastSelected == btn_minus) //this.tlačitko je zaškrtnuté
+                {
+                    lastSelected = null;
+                    CalcDo.two_operand_btn_click("");
+                    Keyboard.Focus(btn_eq);
+                }
+                operatorClicked = true;
             }
         }
 
         private void btn_mul_Click(object sender, RoutedEventArgs e)
         {
-            turnOff_all_borders();
-            if (lastSelected != btn_mul) //kliknutí z jiné položky
+            if (!operatorClicked)
             {
-                evenClick = true; //numisí být
-                lastSelected = btn_mul;
-                turnOn_this_border(btn_mul);
-                CalcDo.two_operand_btn_click("*");
-                Keyboard.Focus(btn_eq);
-            }
+                turnOff_all_borders();
+                if (lastSelected != btn_mul) //kliknutí z jiné položky
+                {
+                    evenClick = true; //numisí být
+                    lastSelected = btn_mul;
+                    turnOn_this_border(btn_mul);
+                    CalcDo.two_operand_btn_click("*");
+                    Keyboard.Focus(btn_eq);
+                }
 
-            else if (evenClick && lastSelected == btn_mul) //this.tlačitko je zaškrtnuté
-            {
-                lastSelected = null;
-                CalcDo.two_operand_btn_click("");
-                Keyboard.Focus(btn_eq);
+                else if (evenClick && lastSelected == btn_mul) //this.tlačitko je zaškrtnuté
+                {
+                    lastSelected = null;
+                    CalcDo.two_operand_btn_click("");
+                    Keyboard.Focus(btn_eq);
+                }
+                operatorClicked = true;
             }
         }
 
         private void btn_div_Click(object sender, RoutedEventArgs e)
         {
-            turnOff_all_borders();
-            if (lastSelected != btn_div) //kliknutí z jiné položky
+            if (!operatorClicked)
             {
-                evenClick = true; //numisí být
-                lastSelected = btn_div;
-                turnOn_this_border(btn_div);
-                CalcDo.two_operand_btn_click("/");
-                Keyboard.Focus(btn_eq);
-            }
+                turnOff_all_borders();
+                if (lastSelected != btn_div) //kliknutí z jiné položky
+                {
+                    evenClick = true; //numisí být
+                    lastSelected = btn_div;
+                    turnOn_this_border(btn_div);
+                    CalcDo.two_operand_btn_click("/");
+                    Keyboard.Focus(btn_eq);
+                }
 
-            else if (evenClick && lastSelected == btn_div) //this.tlačitko je zaškrtnuté
-            {
-                lastSelected = null;
-                CalcDo.two_operand_btn_click("");
-                Keyboard.Focus(btn_eq);
+                else if (evenClick && lastSelected == btn_div) //this.tlačitko je zaškrtnuté
+                {
+                    lastSelected = null;
+                    CalcDo.two_operand_btn_click("");
+                    Keyboard.Focus(btn_eq);
+                }
+                operatorClicked = true;
             }
         }
 
         private void btn_pow_Click(object sender, RoutedEventArgs e)
         {
-            turnOff_all_borders();
-            if (lastSelected != btn_pow) //kliknutí z jiné položky
+            if (!operatorClicked)
             {
-                evenClick = true; //numisí být
-                lastSelected = btn_pow;
-                turnOn_this_border(btn_pow);
-                CalcDo.two_operand_btn_click("*");
-                Keyboard.Focus(btn_eq);
-            }
+                turnOff_all_borders();
+                if (lastSelected != btn_pow) //kliknutí z jiné položky
+                {
+                    evenClick = true; //numisí být
+                    lastSelected = btn_pow;
+                    turnOn_this_border(btn_pow);
+                    CalcDo.two_operand_btn_click("power");
+                    Keyboard.Focus(btn_eq);
+                }
 
-            else if (evenClick && lastSelected == btn_pow) //this.tlačitko je zaškrtnuté
-            {
-                lastSelected = null;
-                CalcDo.two_operand_btn_click("");
-                Keyboard.Focus(btn_eq);
+                else if (evenClick && lastSelected == btn_pow) //this.tlačitko je zaškrtnuté
+                {
+                    lastSelected = null;
+                    CalcDo.two_operand_btn_click("");
+                    Keyboard.Focus(btn_eq);
+                }
+                operatorClicked = true;
             }
         }
 
         private void btn_sqrt_Click(object sender, RoutedEventArgs e)
         {
-            turnOff_all_borders();
-            if (lastSelected != btn_sqrt) //kliknutí z jiné položky
+            if (!operatorClicked)
             {
-                evenClick = true; //numisí být
-                lastSelected = btn_sqrt;
-                turnOn_this_border(btn_sqrt);
-                CalcDo.two_operand_btn_click("/");
-                Keyboard.Focus(btn_eq);
-            }
+                turnOff_all_borders();
+                if (lastSelected != btn_sqrt) //kliknutí z jiné položky
+                {
+                    evenClick = true; //numisí být
+                    lastSelected = btn_sqrt;
+                    turnOn_this_border(btn_sqrt);
+                    CalcDo.two_operand_btn_click("root");
+                    Keyboard.Focus(btn_eq);
+                }
 
-            else if (evenClick && lastSelected == btn_sqrt) //this.tlačitko je zaškrtnuté
-            {
-                lastSelected = null;
-                CalcDo.two_operand_btn_click("");
-                Keyboard.Focus(btn_eq);
+                else if (evenClick && lastSelected == btn_sqrt) //this.tlačitko je zaškrtnuté
+                {
+                    lastSelected = null;
+                    CalcDo.two_operand_btn_click("");
+                    Keyboard.Focus(btn_eq);
+                }
+                operatorClicked = true;
             }
         }
 
         private void btn_log_Click(object sender, RoutedEventArgs e)
         {
-            turnOff_all_borders();
-            if (lastSelected != btn_log) //kliknutí z jiné položky
+            if (!operatorClicked)
             {
-                evenClick = true; //numisí být
-                lastSelected = btn_log;
-                turnOn_this_border(btn_log);
-                CalcDo.two_operand_btn_click("log");
-                Keyboard.Focus(btn_eq);
-            }
+                turnOff_all_borders();
+                if (lastSelected != btn_log) //kliknutí z jiné položky
+                {
+                    evenClick = true; //numisí být
+                    lastSelected = btn_log;
+                    turnOn_this_border(btn_log);
+                    CalcDo.two_operand_btn_click("log");
+                    Keyboard.Focus(btn_eq);
+                }
 
-            else if (evenClick && lastSelected == btn_log) //this.tlačitko je zaškrtnuté
-            {
-                lastSelected = null;
-                CalcDo.two_operand_btn_click("");
-                Keyboard.Focus(btn_eq);
+                else if (evenClick && lastSelected == btn_log) //this.tlačitko je zaškrtnuté
+                {
+                    lastSelected = null;
+                    CalcDo.two_operand_btn_click("");
+                    Keyboard.Focus(btn_eq);
+                }
+                operatorClicked = true;
             }
         }
         //***********************************************************************************************************************
