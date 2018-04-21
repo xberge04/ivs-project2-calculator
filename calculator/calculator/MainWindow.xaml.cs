@@ -38,7 +38,9 @@ namespace calculator
             operatorClicked = false;
         }
 
-        //vypiná označení všech tlačítek, nastavuje BorderThickness = 0
+        /**
+         * @brief Vypiná ografické značení všech tlačítek => nastavuje BorderThickness = 0
+         */
         private void turnOff_all_borders() {
             btn_plus.BorderThickness = ThicOFF;
             btn_minus.BorderThickness = ThicOFF;
@@ -49,15 +51,19 @@ namespace calculator
             btn_log.BorderThickness = ThicOFF;
 
         }
-        //zvýraznění konkrétního tlačítka
+        /**
+         * @brief zvýraznění konkrétního tlačítka
+         * @param B tlačítko ke zvýraznění
+         */
         private void turnOn_this_border(Button B)
         {
             B.BorderThickness = ThickON;
         }
 
-        //*****************************************************************************************************************************
-        //number button clicks
-        //*****************************************************************************************************************************
+        /*
+         * skupina metod obsluhujcí akce po zmáčknutí tlačítka čísla
+         */
+        #region number_btn_click actions
         private void btn_0_Click(object sender, RoutedEventArgs e)
         {
             CalcDo.num_btn_click(0);
@@ -138,7 +144,7 @@ namespace calculator
             Keyboard.Focus(btn_eq);
             operatorClicked = false;
         }
-        //*****************************************************************************************************************************
+        #endregion
 
         private void btn_point_Click(object sender, RoutedEventArgs e)
         {
@@ -170,9 +176,11 @@ namespace calculator
             turnOff_all_borders();
             operatorClicked = false;
         }
-        //****************************************************************************************************************************
-        //one opetand functions
-        //****************************************************************************************************************************
+        /**
+         * skupina metod obsluhující zmáčknutí tlačítka operace
+         */
+        #region Operand_btn_Click actions
+        #region One_operand_btn_Click actions
         private void btn_fact_Click(object sender, RoutedEventArgs e)
         {
             CalcDo.one_operand_btn_click("!");
@@ -181,10 +189,9 @@ namespace calculator
             Keyboard.Focus(btn_eq);
             operatorClicked = false;
         }
-        //****************************************************************************************************************************
-        //two operand functions
-        //****************************************************************************************************************************
-        
+        #endregion
+
+        #region two_operand_operations_btn_click actions
         private void btn_plus_Click(object sender, RoutedEventArgs e)
         {
             if (!operatorClicked)
@@ -352,7 +359,9 @@ namespace calculator
                 operatorClicked = true;
             }
         }
-        //***********************************************************************************************************************
+        #endregion
+        #endregion 
+
         private void close_btn_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

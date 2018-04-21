@@ -49,7 +49,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Calc_icon_Icon.ico</ApplicationIcon>
+    <ApplicationIcon>Properties\Icons\Calc_icon_Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -109,7 +109,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Resource Include="Calc_icon_Icon.ico" />
+    <Resource Include="Properties\Icons\Calc_icon_Icon.ico" />
     <Content Include="Properties\Fonts\GeosansLight.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
