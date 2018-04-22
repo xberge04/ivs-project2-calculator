@@ -8,7 +8,7 @@ namespace calculator.Math_Library
 {
     
     /// <summary>
-    /// Mathematics library for creating our calculator application.
+    /// Matematická knihovna vytvořená pro aplikaci Kalkulačka.
     /// </summary>
     public class Math
     {
@@ -18,11 +18,11 @@ namespace calculator.Math_Library
         }
 
         /// <summary>
-        /// Function of addition.
+        /// Funkce sčítání.
         /// </summary>
-        /// <param name="num1">First added number.</param>
-        /// <param name="num2">Second added number.</param>
-        /// <returns>Sum of these numbers.</returns>
+        /// <param name="num1">První přidané číslo.</param>
+        /// <param name="num2">Druhé přidané číslo.</param>
+        /// <returns>Součet dvou parametrů funkce.</returns>
         public double Add(double num1, double num2)
         {
             double result = num1 + num2;
@@ -30,11 +30,11 @@ namespace calculator.Math_Library
         }
 
         /// <summary>
-        /// Function of subtraction.
+        /// Funkce odčítání.
         /// </summary>
-        /// <param name="num1">Minuend.</param>
-        /// <param name="num2">Subtrahend.</param>
-        /// <returns>Difference.</returns>
+        /// <param name="num1">Číslo, z kterého se odčítá.</param>
+        /// <param name="num2">Odčítané číslo.</param>
+        /// <returns>Rozdíl dvou parametrů funkce.</returns>
         public double Sub(double num1, double num2)
         {
             double result = num1 - num2;
@@ -42,11 +42,11 @@ namespace calculator.Math_Library
         }
 
         /// <summary>
-        /// Function of multiplying.
+        /// Funkce násobení.
         /// </summary>
-        /// <param name="num1">Multiplicand.</param>
-        /// <param name="num2">Multiplier.</param>
-        /// <returns>Result of multiply.</returns>
+        /// <param name="num1">Násobenec.</param>
+        /// <param name="num2">Násobitel</param>
+        /// <returns>Výsledek násobení dvou parametrů funkce.</returns>
         public double Mul(double num1, double num2)
         {
             double result = num1 * num2;
@@ -54,11 +54,11 @@ namespace calculator.Math_Library
         }
 
         /// <summary>
-        /// Function of dividing.
+        /// Funkce dělení.
         /// </summary>
-        /// <param name="num1">Dividend.</param>
-        /// <param name="num2">Divisor.</param>
-        /// <returns>Result of devide.</returns>
+        /// <param name="num1">Dělenec.</param>
+        /// <param name="num2">Dělitel.</param>
+        /// <returns>Výsledek dělení dvou parametrů funkce.</returns>
         public double Div(double num1, double num2)
         {
             if(num2==0)
@@ -70,11 +70,11 @@ namespace calculator.Math_Library
         }
 
         /// <summary>
-        /// Function of exponentiation.
+        /// Funkce přirozené mocniny.
         /// </summary>
-        /// <param name="num1">Base.</param>
-        /// <param name="num2">Exponent.</param>
-        /// <returns>Result of exponentiation.</returns>
+        /// <param name="num1">Základ mocniny.</param>
+        /// <param name="num2">Exponent mocniny.</param>
+        /// <returns>Výsledek umocnění dvou parametrů funkce.</returns>
         public double Pow(double num1, double num2)
         {
             if (num2 >= 0 && num2 % 1 == 0)
@@ -87,7 +87,12 @@ namespace calculator.Math_Library
                 throw new ArgumentOutOfRangeException();
             }
         }
-
+        /// <summary>
+        /// Funkce mocniny, potřebná pro odmocňování.
+        /// </summary>
+        /// <param name="num1">Základ mocniny.</param>
+        /// <param name="num2">Exponent mocniny.</param>
+        /// <returns>Výsledek umocnění dvou parametrů funkce.</returns>
         public double PowForRoot(double num1, double num2)
         {
             double result = System.Math.Pow(num1, num2);
@@ -95,11 +100,11 @@ namespace calculator.Math_Library
         }
 
         /// <summary>
-        /// Function of root.
+        /// Funkce obecné odmocniny.
         /// </summary>
-        /// <param name="num1">Base.</param>
-        /// <param name="num2">Exponent of root.</param>
-        /// <returns>Result of root.</returns>
+        /// <param name="num1">Základ odmocniny.</param>
+        /// <param name="num2">Stupeň odmocniny.</param>
+        /// <returns>Výsledek odmocnění.</returns>
         public double Root(double num1, double num2)
         {
             double result = 0;
@@ -127,17 +132,16 @@ namespace calculator.Math_Library
         }
 
         /// <summary>
-        /// Factorial function.
+        /// Funkce faktoriálu.
         /// </summary>
-        /// <param name="num1">Positive natural number of factorial.</param>
-        /// <returns>Result of factorial.</returns>
+        /// <param name="num1">Přírozené číslo k použití faktoriálu.</param>
+        /// <returns>Výsledek faktoriálu.</returns>
         public ulong Fact(double num1)
         {
             ulong result = (ulong)num1;
             if (num1 > 65)
             {
                 throw new ArgumentOutOfRangeException();
-                return result;
             }
             else if (num1 > 0 && num1 % 1 == 0)
             {
@@ -158,11 +162,11 @@ namespace calculator.Math_Library
         }
 
         /// <summary>
-        /// Logarithm function.
+        /// Funkce logaritmu
         /// </summary>
-        /// <param name="num1">Base.</param>
-        /// <param name="num2">Number of logarithm</param>
-        /// <returns>Result of logarithm.</returns>
+        /// <param name="num1">Funkční hodnota logaritmu.</param>
+        /// <param name="num2">Základ logaritmu.</param>
+        /// <returns>Výsldek logaritmu.</returns>
         public double Log(double num1, double num2)
         {
             if(num1 > 0 && num1 != 1)
