@@ -1,5 +1,5 @@
 In file zprava.pdf we can see output of profiling with 10, 100, 1000 input values.
 
-Program takes the most time invoking the system function for write to stdout and functions root and pow from math library.
-Root() function is called only once but with big number which we get from smerodatnaOdchylka() function and function Pow() is called for each input value.
-When optimizing our code, we should focus on algorithm in function smerodatnaOdchylka().
+Program takes the most time invoking the system function for write to stdout and the functions root and pow from the math library.
+Root() function is called only once but with a big number which we get from smerodatnaOdchylka() function and  the function Pow() is called for each input value.
+When optimizing our code, we should focus on the algorithm in the function smerodatnaOdchylka().
