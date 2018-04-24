@@ -8,21 +8,31 @@ using System.Windows.Controls;
 namespace calculator
 {
 
-    /**
-     *@brief Třída zpracovává vstupy z UI 
-     * 
-     */
+    /// <summary>
+    /// Calculate inputs from UI.
+    /// </summary>
     public class CalcBackend
     {
         TextBlock display;
         Math_Library.Math Math;
-        private bool insert_mode; //přepínač rozhodující o novém čísle, nebo jen přidání číslice ke stávajícímu číslu
+        /// <summary>
+        /// a switch that determines the new number, or just adding a digit to an existing number
+        /// </summary>
+        private bool insert_mode; 
         double operand1;
-        bool firstTime_click; //znamená to, že ještě nebyla zadá žádná matematická operace
-        bool was_firstTime_click; //jestli předchozí operace byla firsttime_click
+        /// <summary>
+        /// it means that no mathematical operation has yet been entered
+        /// </summary>
+        bool firstTime_click; 
+        /// <summary>
+        /// if the previous operation was firsttime_click
+        /// </summary>
+        bool was_firstTime_click; 
         string lastOperator;
 
-        //konstruktor třídy
+        /// <summary>
+        /// Constructor of the class
+        /// </summary>
         public CalcBackend(TextBlock displ) {
             display = displ;
             Math = new Math_Library.Math();
@@ -34,13 +44,16 @@ namespace calculator
             display.Text = "0";
         }
 
-        /**
-         * @brief metoda, která mění velikost fontu na display v závislosti na počtu zobrazovaných znaků
-         * @param num_of_digits délka řetezce
-         */
+        /// <summary>
+        /// Method that changes font size on display depending on the number of characters displayed
+        /// </summary>
+        /// <param name="num_of_digits">Lenght of string</param>
         private void display_textResize(int num_of_digits)
         {
-            if (num_of_digits > 17) //17 je stanovené maximum čísel, při standartní velikosti, které se vlezou na řádek
+            /// <summary>
+            /// 17 is the maximum of numbers which fits on the line at standard size,
+            /// </summary>
+            if (num_of_digits > 17) 
             {
                 display.FontSize *= 0.95;
             }
@@ -50,10 +63,10 @@ namespace calculator
             }
         }
 
-        /**
-         * @brief vykreslí na display zadané číslo a upraví velikost písma podle počtu číslic
-         * @param number číslo k vypsání na display
-         */
+        /// <summary>
+        /// renders the entered number and adjusts the font size by the number of digits
+        /// </summary>
+        /// <param name="number">Number to render on display</param>
         private void show_number(double number)
         {
             display.FontSize = 36;
@@ -70,10 +83,12 @@ namespace calculator
             }
         }
 
-        /**
-         * @brief Parsuje text na double a pokud je v řetezci ',' nahradí to za '.'
-         * @param text retězec k převedení
-         */
+
+        /// <summary>
+        /// Parses text to double and exchange ',' for '.' 
+        /// </summary>
+        /// <returns>Parsed string</returns>
+        /// <param name="text">string to parse</param>
         private double dispString_to_numb(string text)
         {
             if (text.Length == 0)
@@ -87,12 +102,13 @@ namespace calculator
                 return double.Parse(text);
             }
         }
-        /**
-         * @brief provadí matematickou operaci
-         * @param lastOperator uchovává operaci podle posledního zvoleného tlačítka, která se následně provede
-         */
+
+        /// <summary>
+        /// Does the math operation.
+        /// </summary>
         private void do_math_operation()
         {
+            /// <sumamry> Variable lastOperator stores last operation which will be performed </summary>
                 switch (lastOperator)
                 {
                     case "+":
@@ -121,18 +137,19 @@ namespace calculator
             }
         }
 
-        /**
-         * @brief převede číslo na display na číslo jemu opačné
-         */
+        /// <summary>
+        /// Converts the number on the display to the opposite number
+        /// </summary>
         public void num_invert_brn()
         {
             if (display.Text != "Chyba!")
                 display.Text = "" + -(dispString_to_numb(display.Text));
         }
 
-        /**
-         * @brief akce po stlačení číslice
-         */
+        /// <summary>
+        /// Action after pressing number button
+        /// </summary>
+        /// <param name="number">Pressed number</param>
         public void num_btn_click(int number)
         {
             if (display.Text != "Chyba!")
@@ -141,7 +158,8 @@ namespace calculator
                 {
                     if (insert_mode)
                     {
-                        if (display.Text.Length == 1 && display.Text[0] == '0') // v případě, že již je zadaná 0, jako prvni znak nejde přidat další
+                        /// <summary> if zero is entered next numbers cannot be inserted as the first</summary>
+                        if (display.Text.Length == 1 && display.Text[0] == '0') 
                             return;
                         display.Text += "0";
                         display_textResize(display.Text.Length);
@@ -176,10 +194,10 @@ namespace calculator
                 }
             }
         }
-   
-        /**
-        * @brief akce po stlačení tlačítka nulování
-        */
+  
+        /// <summary>
+        /// Action after pressing the reset button
+        /// </summary>
         public void c_btn_click()
         {
             operand1 = 0;
@@ -189,9 +207,9 @@ namespace calculator
             insert_mode = true;
         }
 
-        /**
-         * @brief akce po stlačení tlačítka mazání poslední číslice
-         */
+        /// <summary>
+        /// Action after pressing the button for erasing the last number
+        /// </summary>
         public void back_arr_btn_click()
         {
             if (display.Text != "Chyba!")
@@ -226,9 +244,9 @@ namespace calculator
             
         }
 
-        /**
-        * @brief akce po stlačení tlačítka desetiné čárky
-        */
+        /// <summary>
+        /// Action after pressing the coma button
+        /// </summary>
         public void point_btn_click()
         {
             if (display.Text != "Chyba!")
@@ -236,10 +254,10 @@ namespace calculator
                     display.Text += ",";
         }
 
-        /**
-        * @brief akce po stlačení tlačítka operace, která vyžaduje jeden operand
-        * @param operation typ operace, která byla zvolena tlačítkem
-        */
+        /// <summary>
+        /// Action after pressing the operation button which requires only one operand
+        /// </summary>
+        /// <param name="operation">Selected operation</param>
         public void one_operand_btn_click(string operation) {
             if (display.Text != "Chyba!")
             {
@@ -266,10 +284,10 @@ namespace calculator
             }
         }
 
-        /**
-        * @brief akce po stlaření tlačítka operace, která vyžaduje dva operandy
-        * @param operation typ operace, která byla zvolena tlačítkem
-        */
+        /// <summary>
+        /// Action after pressing the operation button which requires two operands
+        /// </summary>
+        /// <param name="operation">Selected operation</param>
         public void two_operand_btn_click(string operation)
         {
             if (display.Text != "Chyba!")
@@ -307,9 +325,9 @@ namespace calculator
             }
         }
 
-        /**
-        * @brief akce po stlačení tlačítka "rovná se"
-        */
+        /// <summary>
+        /// Action after the '=' button
+        /// </summary>
         public void eq_btn_click()
         {
             if (display.Text != "Chyba!")
