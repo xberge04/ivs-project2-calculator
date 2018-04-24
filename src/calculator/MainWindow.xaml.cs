@@ -16,17 +16,17 @@ using System.Windows.Shapes;
 namespace calculator
 {
     /// <summary>
-    /// Interakční logika pro MainWindow.xaml
+    /// Interacting logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        calculator.CalcBackend CalcDo; //objekt backendu
-        Thickness ThickON; // konstanta uchovávající šířku rámečku zvoleného tlačítka
-        Thickness ThicOFF; // konstanta uchovávající šířku rámečku zvoleného tlačítka
-        Button lastSelected; //proměná uchovávající poslední zvolenou operaci
-        bool evenClick; //proměná uchovávající sude/liché kliknutí; sudé = true, liché= false
-        bool operatorClicked; //proměnná uchovávající, zda je zmáčknuté tlačítko operátoru 
-
+        calculator.CalcBackend CalcDo; ///<summary>Backend object </summary> 
+        Thickness ThickON; ///<summary> a constant holding the width of the selected button frame </summary>
+        Thickness ThicOFF; ///<summary> a constant holding the width of the selected button frame </summary>
+        Button lastSelected;///<summary> variable with last operation </summary> 
+        bool evenClick;///<summary> variable which stores even/odd state of click, even = true, odd - false</summary>
+        bool operatorClicked;///<summary>variable which stores information about operator button click</summary>  
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -38,9 +38,9 @@ namespace calculator
             operatorClicked = false;
         }
 
-        /**
-         * @brief Vypiná ografické značení všech tlačítek => nastavuje BorderThickness = 0
-         */
+        /// <summary>
+        /// Turns off graphic of all buttons => sets BorderThickness = 0
+        /// </summary>
         private void turnOff_all_borders() {
             btn_plus.BorderThickness = ThicOFF;
             btn_minus.BorderThickness = ThicOFF;
@@ -51,18 +51,19 @@ namespace calculator
             btn_log.BorderThickness = ThicOFF;
 
         }
-        /**
-         * @brief zvýraznění konkrétního tlačítka
-         * @param B tlačítko ke zvýraznění
-         */
+
+        /// <summary>
+        /// Highlights concrete button.
+        /// </summary>
+        /// <param name="B">Button to highlight</param>
         private void turnOn_this_border(Button B)
         {
             B.BorderThickness = ThickON;
         }
 
-        /*
-         * skupina metod obsluhujcí akce po zmáčknutí tlačítka čísla
-         */
+        /// <summary>
+        /// A group of methods handling actions after pressing a number key
+        /// </summary>
         #region number_btn_click actions
         private void btn_0_Click(object sender, RoutedEventArgs e)
         {
@@ -145,7 +146,6 @@ namespace calculator
             operatorClicked = false;
         }
         #endregion
-
         private void btn_point_Click(object sender, RoutedEventArgs e)
         {
             CalcDo.point_btn_click();
@@ -176,9 +176,10 @@ namespace calculator
             turnOff_all_borders();
             operatorClicked = false;
         }
-        /**
-         * skupina metod obsluhující zmáčknutí tlačítka operace
-         */
+
+        /// <summary>
+        /// A group of methods for pushing the operation button
+        /// </summary>
         #region Operand_btn_Click actions
         #region One_operand_btn_Click actions
         private void btn_fact_Click(object sender, RoutedEventArgs e)
@@ -197,7 +198,9 @@ namespace calculator
             if (!operatorClicked)
             {
                 turnOff_all_borders();
-                if (lastSelected != btn_plus) //kliknutí z jiné položky a zaškrtnutí současné
+                /// <summary>
+                /// clicks from another item and tick the current one
+                if (lastSelected != btn_plus) /// </summary>
                 {
                     evenClick = true;
                     lastSelected = btn_plus;
@@ -205,8 +208,10 @@ namespace calculator
                     CalcDo.two_operand_btn_click("+");
                     Keyboard.Focus(btn_eq);
                 }
-
-                else if (evenClick && lastSelected == btn_plus) //this.tlačitko už je zaškrtnuté a odškrtne se
+                /// <summary>
+                /// this.button is already checked and will uncheck
+                /// </summary>
+                else if (evenClick && lastSelected == btn_plus) 
                 {
                     lastSelected = null;
                     CalcDo.two_operand_btn_click("");
@@ -221,16 +226,21 @@ namespace calculator
             if (!operatorClicked)
             {
                 turnOff_all_borders();
-                if (lastSelected != btn_minus) //kliknutí z jiné položky
+                /// <summary>
+                /// clicks from another item
+                /// </summary>
+                if (lastSelected != btn_minus) 
                 {
-                    evenClick = true; //numisí být
+                    evenClick = true; 
                     lastSelected = btn_minus;
                     turnOn_this_border(btn_minus);
                     CalcDo.two_operand_btn_click("-");
                     Keyboard.Focus(btn_eq);
                 }
-
-                else if (evenClick && lastSelected == btn_minus) //this.tlačitko je zaškrtnuté
+                /// <summary>
+                /// this.button is checked
+                /// </summary>
+                else if (evenClick && lastSelected == btn_minus) 
                 {
                     lastSelected = null;
                     CalcDo.two_operand_btn_click("");
@@ -245,16 +255,22 @@ namespace calculator
             if (!operatorClicked)
             {
                 turnOff_all_borders();
-                if (lastSelected != btn_mul) //kliknutí z jiné položky
+                /// <summary>
+                /// click from another item
+                /// </summary>
+                if (lastSelected != btn_mul) 
                 {
-                    evenClick = true; //numisí být
+                    evenClick = true; 
                     lastSelected = btn_mul;
                     turnOn_this_border(btn_mul);
                     CalcDo.two_operand_btn_click("*");
                     Keyboard.Focus(btn_eq);
                 }
 
-                else if (evenClick && lastSelected == btn_mul) //this.tlačitko je zaškrtnuté
+                /// <summary>
+                /// this.button is checked
+                /// </summary>
+                else if (evenClick && lastSelected == btn_mul) 
                 {
                     lastSelected = null;
                     CalcDo.two_operand_btn_click("");
@@ -269,7 +285,10 @@ namespace calculator
             if (!operatorClicked)
             {
                 turnOff_all_borders();
-                if (lastSelected != btn_div) //kliknutí z jiné položky
+                /// <summary>
+                /// click from another item
+                /// </summary>
+                if (lastSelected != btn_div) 
                 {
                     evenClick = true; //numisí být
                     lastSelected = btn_div;
@@ -277,8 +296,10 @@ namespace calculator
                     CalcDo.two_operand_btn_click("/");
                     Keyboard.Focus(btn_eq);
                 }
-
-                else if (evenClick && lastSelected == btn_div) //this.tlačitko je zaškrtnuté
+                /// <summary>
+                /// this.button is checked
+                /// </summary>
+                else if (evenClick && lastSelected == btn_div) 
                 {
                     lastSelected = null;
                     CalcDo.two_operand_btn_click("");
@@ -293,7 +314,10 @@ namespace calculator
             if (!operatorClicked)
             {
                 turnOff_all_borders();
-                if (lastSelected != btn_pow) //kliknutí z jiné položky
+                /// <summary>
+                /// click from another item
+                /// </summary>
+                if (lastSelected != btn_pow) 
                 {
                     evenClick = true; //numisí být
                     lastSelected = btn_pow;
@@ -301,8 +325,10 @@ namespace calculator
                     CalcDo.two_operand_btn_click("power");
                     Keyboard.Focus(btn_eq);
                 }
-
-                else if (evenClick && lastSelected == btn_pow) //this.tlačitko je zaškrtnuté
+                /// <summary>
+                /// this.button is checked
+                /// </summary>
+                else if (evenClick && lastSelected == btn_pow)
                 {
                     lastSelected = null;
                     CalcDo.two_operand_btn_click("");
@@ -317,6 +343,9 @@ namespace calculator
             if (!operatorClicked)
             {
                 turnOff_all_borders();
+                /// <summary>
+                /// click from another item
+                /// </summary>
                 if (lastSelected != btn_sqrt) //kliknutí z jiné položky
                 {
                     evenClick = true; //numisí být
@@ -325,8 +354,10 @@ namespace calculator
                     CalcDo.two_operand_btn_click("root");
                     Keyboard.Focus(btn_eq);
                 }
-
-                else if (evenClick && lastSelected == btn_sqrt) //this.tlačitko je zaškrtnuté
+                /// <summary>
+                /// this.button is checked
+                /// </summary>
+                else if (evenClick && lastSelected == btn_sqrt) 
                 {
                     lastSelected = null;
                     CalcDo.two_operand_btn_click("");
@@ -341,7 +372,10 @@ namespace calculator
             if (!operatorClicked)
             {
                 turnOff_all_borders();
-                if (lastSelected != btn_log) //kliknutí z jiné položky
+                /// <summary>
+                /// click from another item
+                /// </summary>
+                if (lastSelected != btn_log) 
                 {
                     evenClick = true; //numisí být
                     lastSelected = btn_log;
@@ -349,8 +383,10 @@ namespace calculator
                     CalcDo.two_operand_btn_click("log");
                     Keyboard.Focus(btn_eq);
                 }
-
-                else if (evenClick && lastSelected == btn_log) //this.tlačitko je zaškrtnuté
+                /// <summary>
+                /// this.button is checked
+                /// </summary>
+                else if (evenClick && lastSelected == btn_log) 
                 {
                     lastSelected = null;
                     CalcDo.two_operand_btn_click("");
@@ -361,7 +397,6 @@ namespace calculator
         }
         #endregion
         #endregion 
-
         private void close_btn_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
