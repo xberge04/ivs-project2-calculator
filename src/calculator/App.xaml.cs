@@ -9,7 +9,7 @@ using System.Windows;
 namespace calculator
 {
     /// <summary>
-    /// Interakční logika pro App.xaml
+    /// Interacting logic for App.xaml
     /// </summary>
     public partial class App : Application
     {
