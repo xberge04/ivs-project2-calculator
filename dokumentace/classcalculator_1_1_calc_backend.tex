@@ -1,0 +1,398 @@
+\section{calculator.\+Calc\+Backend Class Reference}
+\label{classcalculator_1_1_calc_backend}\index{calculator.\+Calc\+Backend@{calculator.\+Calc\+Backend}}
+
+
+Calculate inputs from UI.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Calc\+Backend} (Text\+Block displ)
+\begin{DoxyCompactList}\small\item\em Constructor of the class \end{DoxyCompactList}\item 
+void \textbf{ num\+\_\+invert\+\_\+brn} ()
+\begin{DoxyCompactList}\small\item\em Converts the number on the display to the opposite number \end{DoxyCompactList}\item 
+void \textbf{ num\+\_\+btn\+\_\+click} (int number)
+\begin{DoxyCompactList}\small\item\em Action after pressing number button \end{DoxyCompactList}\item 
+void \textbf{ c\+\_\+btn\+\_\+click} ()
+\begin{DoxyCompactList}\small\item\em Action after pressing the reset button \end{DoxyCompactList}\item 
+void \textbf{ back\+\_\+arr\+\_\+btn\+\_\+click} ()
+\begin{DoxyCompactList}\small\item\em Action after pressing the button for erasing the last number \end{DoxyCompactList}\item 
+void \textbf{ point\+\_\+btn\+\_\+click} ()
+\begin{DoxyCompactList}\small\item\em Action after pressing the coma button \end{DoxyCompactList}\item 
+void \textbf{ one\+\_\+operand\+\_\+btn\+\_\+click} (string operation)
+\begin{DoxyCompactList}\small\item\em Action after pressing the operation button which requires only one operand \end{DoxyCompactList}\item 
+void \textbf{ two\+\_\+operand\+\_\+btn\+\_\+click} (string operation)
+\begin{DoxyCompactList}\small\item\em Action after pressing the operation button which requires two operands \end{DoxyCompactList}\item 
+void \textbf{ eq\+\_\+btn\+\_\+click} ()
+\begin{DoxyCompactList}\small\item\em Action after the \textquotesingle{}=\textquotesingle{} button \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Calculate inputs from UI. 
+
+
+
+Definition at line 14 of file Calc\+Backend.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classcalculator_1_1_calc_backend_a6a8887876c5ed8923c1f05f51a23cedf}} 
+\index{calculator\+::\+Calc\+Backend@{calculator\+::\+Calc\+Backend}!Calc\+Backend@{Calc\+Backend}}
+\index{Calc\+Backend@{Calc\+Backend}!calculator\+::\+Calc\+Backend@{calculator\+::\+Calc\+Backend}}
+\subsubsection{Calc\+Backend()}
+{\footnotesize\ttfamily calculator.\+Calc\+Backend.\+Calc\+Backend (\begin{DoxyParamCaption}\item[{Text\+Block}]{displ }\end{DoxyParamCaption})}
+
+
+
+Constructor of the class 
+
+
+
+Definition at line 36 of file Calc\+Backend.\+cs.
+
+
+\begin{DoxyCode}
+36                                             \{
+37             display = displ;
+38             Math = \textcolor{keyword}{new} Math\_Library.Math();
+39             insert\_mode = \textcolor{keyword}{true};
+40             operand1 = 0;
+41             firstTime\_click = \textcolor{keyword}{true};
+42             was\_firstTime\_click = \textcolor{keyword}{false};
+43             lastOperator = \textcolor{stringliteral}{""};
+44             display.Text = \textcolor{stringliteral}{"0"};
+45         \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classcalculator_1_1_calc_backend_a988298bb2592f5e977bd16b91ea92d89}} 
+\index{calculator\+::\+Calc\+Backend@{calculator\+::\+Calc\+Backend}!back\+\_\+arr\+\_\+btn\+\_\+click@{back\+\_\+arr\+\_\+btn\+\_\+click}}
+\index{back\+\_\+arr\+\_\+btn\+\_\+click@{back\+\_\+arr\+\_\+btn\+\_\+click}!calculator\+::\+Calc\+Backend@{calculator\+::\+Calc\+Backend}}
+\subsubsection{back\+\_\+arr\+\_\+btn\+\_\+click()}
+{\footnotesize\ttfamily void calculator.\+Calc\+Backend.\+back\+\_\+arr\+\_\+btn\+\_\+click (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Action after pressing the button for erasing the last number 
+
+
+
+Definition at line 213 of file Calc\+Backend.\+cs.
+
+
+\begin{DoxyCode}
+214         \{
+215             \textcolor{keywordflow}{if} (display.Text != \textcolor{stringliteral}{"Chyba!"})
+216                 \textcolor{keywordflow}{if} (display.Text.Length >= 0)
+217                 \{
+218                     \textcolor{keywordflow}{if} (display.Text.Length >= 5)
+219                     \{
+220                         \textcolor{keywordflow}{if} (display.Text[display.Text.Length - 4] == \textcolor{charliteral}{'E'})
+221                         \{
+222                             \textcolor{keywordflow}{if} (display.Text.Length > 5)
+223                                 show\_number(dispString\_to\_numb(display.Text.Remove(display.Text.Length - 5,
+       1)));
+224                                 \textcolor{keywordflow}{if} (display.Text[display.Text.Length - 4] != \textcolor{charliteral}{'E'})
+225                                 show\_number(dispString\_to\_numb(display.Text.Remove(display.Text.Length - 1)
+      ));
+226                         \}
+227                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (display.Text[display.Text.Length - 5] == \textcolor{charliteral}{'E'})
+228                         \{
+229                             \textcolor{keywordflow}{if} (display.Text.Length > 6)
+230                                 show\_number(dispString\_to\_numb(display.Text.Remove(display.Text.Length - 6,
+       1)));
+231                                 \textcolor{keywordflow}{if} (display.Text[display.Text.Length - 5] != \textcolor{charliteral}{'E'})
+232                                 show\_number(dispString\_to\_numb(display.Text.Remove(display.Text.Length - 1)
+      ));
+233                         \} 
+234                         \textcolor{keywordflow}{else}
+235                             show\_number(dispString\_to\_numb(display.Text.Remove(display.Text.Length - 1)));
+236                     \}
+237                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (display.Text.Length < 5 && display.Text.Length > 1)
+238                         show\_number(dispString\_to\_numb(display.Text.Remove(display.Text.Length - 1)));
+239                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (display.Text.Length == 1)
+240                     \{
+241                         show\_number(dispString\_to\_numb(\textcolor{stringliteral}{"0"}));
+242                     \}
+243                 \}
+244             
+245         \}
+\end{DoxyCode}
+\mbox{\label{classcalculator_1_1_calc_backend_a7b0b02fd9b36199f288b1b8be7b4f03d}} 
+\index{calculator\+::\+Calc\+Backend@{calculator\+::\+Calc\+Backend}!c\+\_\+btn\+\_\+click@{c\+\_\+btn\+\_\+click}}
+\index{c\+\_\+btn\+\_\+click@{c\+\_\+btn\+\_\+click}!calculator\+::\+Calc\+Backend@{calculator\+::\+Calc\+Backend}}
+\subsubsection{c\+\_\+btn\+\_\+click()}
+{\footnotesize\ttfamily void calculator.\+Calc\+Backend.\+c\+\_\+btn\+\_\+click (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Action after pressing the reset button 
+
+
+
+Definition at line 201 of file Calc\+Backend.\+cs.
+
+
+\begin{DoxyCode}
+202         \{
+203             operand1 = 0;
+204             lastOperator = \textcolor{stringliteral}{""};
+205             firstTime\_click = \textcolor{keyword}{true};
+206             display.Text = \textcolor{stringliteral}{"0"};
+207             insert\_mode = \textcolor{keyword}{true};
+208         \}
+\end{DoxyCode}
+\mbox{\label{classcalculator_1_1_calc_backend_a77c18867d24590ae555f7fc6162d5f42}} 
+\index{calculator\+::\+Calc\+Backend@{calculator\+::\+Calc\+Backend}!eq\+\_\+btn\+\_\+click@{eq\+\_\+btn\+\_\+click}}
+\index{eq\+\_\+btn\+\_\+click@{eq\+\_\+btn\+\_\+click}!calculator\+::\+Calc\+Backend@{calculator\+::\+Calc\+Backend}}
+\subsubsection{eq\+\_\+btn\+\_\+click()}
+{\footnotesize\ttfamily void calculator.\+Calc\+Backend.\+eq\+\_\+btn\+\_\+click (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Action after the \textquotesingle{}=\textquotesingle{} button 
+
+
+
+Definition at line 331 of file Calc\+Backend.\+cs.
+
+
+\begin{DoxyCode}
+332         \{
+333             \textcolor{keywordflow}{if} (display.Text != \textcolor{stringliteral}{"Chyba!"})
+334             \{
+335                 \textcolor{keywordflow}{try}
+336                 \{
+337                     do\_math\_operation();
+338                     lastOperator = \textcolor{stringliteral}{""};
+339                     show\_number(operand1);
+340                     insert\_mode = \textcolor{keyword}{false};
+341                     firstTime\_click = \textcolor{keyword}{true};
+342                 \}
+343                 \textcolor{keywordflow}{catch} (Exception)
+344                 \{
+345                     display.Text = \textcolor{stringliteral}{"Chyba!"};
+346                     \textcolor{keywordflow}{return};
+347                 \}
+348             \}
+349         \}
+\end{DoxyCode}
+\mbox{\label{classcalculator_1_1_calc_backend_ada719e048ff0d7c532a63968c73edd2e}} 
+\index{calculator\+::\+Calc\+Backend@{calculator\+::\+Calc\+Backend}!num\+\_\+btn\+\_\+click@{num\+\_\+btn\+\_\+click}}
+\index{num\+\_\+btn\+\_\+click@{num\+\_\+btn\+\_\+click}!calculator\+::\+Calc\+Backend@{calculator\+::\+Calc\+Backend}}
+\subsubsection{num\+\_\+btn\+\_\+click()}
+{\footnotesize\ttfamily void calculator.\+Calc\+Backend.\+num\+\_\+btn\+\_\+click (\begin{DoxyParamCaption}\item[{int}]{number }\end{DoxyParamCaption})}
+
+
+
+Action after pressing number button 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & Pressed number\\
+\hline
+\end{DoxyParams}
+if zero is entered next numbers cannot be inserted as the first
+
+Definition at line 153 of file Calc\+Backend.\+cs.
+
+
+\begin{DoxyCode}
+154         \{
+155             \textcolor{keywordflow}{if} (display.Text != \textcolor{stringliteral}{"Chyba!"})
+156             \{
+157                 \textcolor{keywordflow}{if} (number == 0)
+158                 \{
+159                     \textcolor{keywordflow}{if} (insert\_mode)
+160                     \{
+162                         \textcolor{keywordflow}{if} (display.Text.Length == 1 && display.Text[0] == \textcolor{charliteral}{'0'}) 
+163                             \textcolor{keywordflow}{return};
+164                         display.Text += \textcolor{stringliteral}{"0"};
+165                         display\_textResize(display.Text.Length);
+166                     \}
+167                     \textcolor{keywordflow}{else}
+168                     \{
+169                         display.Text = 0.ToString();
+170                         display\_textResize(display.Text.Length);
+171                         insert\_mode = \textcolor{keyword}{true};
+172                     \}
+173                 \}
+174                 \textcolor{keywordflow}{else}
+175                 \{
+176                     \textcolor{keywordflow}{if} (insert\_mode)
+177                     \{
+178                         \textcolor{keywordflow}{if} (display.Text.Length == 1 && display.Text[0] == \textcolor{charliteral}{'0'})
+179                         \{
+180                             display.Text = number.ToString();
+181                             display\_textResize(display.Text.Length);
+182                         \}
+183                         \textcolor{keywordflow}{else}
+184                         \{
+185                             display.Text += \textcolor{stringliteral}{""} + number;
+186                             display\_textResize(display.Text.Length);
+187                         \}
+188                     \}
+189                     \textcolor{keywordflow}{else}
+190                     \{
+191                         display.Text = \textcolor{stringliteral}{""} + number;
+192                         insert\_mode = \textcolor{keyword}{true};
+193                     \}
+194                 \}
+195             \}
+196         \}
+\end{DoxyCode}
+\mbox{\label{classcalculator_1_1_calc_backend_abf1777c457b96f9f357d92ead1876e8a}} 
+\index{calculator\+::\+Calc\+Backend@{calculator\+::\+Calc\+Backend}!num\+\_\+invert\+\_\+brn@{num\+\_\+invert\+\_\+brn}}
+\index{num\+\_\+invert\+\_\+brn@{num\+\_\+invert\+\_\+brn}!calculator\+::\+Calc\+Backend@{calculator\+::\+Calc\+Backend}}
+\subsubsection{num\+\_\+invert\+\_\+brn()}
+{\footnotesize\ttfamily void calculator.\+Calc\+Backend.\+num\+\_\+invert\+\_\+brn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Converts the number on the display to the opposite number 
+
+
+
+Definition at line 143 of file Calc\+Backend.\+cs.
+
+
+\begin{DoxyCode}
+144         \{
+145             \textcolor{keywordflow}{if} (display.Text != \textcolor{stringliteral}{"Chyba!"})
+146                 display.Text = \textcolor{stringliteral}{""} + -(dispString\_to\_numb(display.Text));
+147         \}
+\end{DoxyCode}
+\mbox{\label{classcalculator_1_1_calc_backend_a95eafd7b5831e854bc32cd2cd2fb16be}} 
+\index{calculator\+::\+Calc\+Backend@{calculator\+::\+Calc\+Backend}!one\+\_\+operand\+\_\+btn\+\_\+click@{one\+\_\+operand\+\_\+btn\+\_\+click}}
+\index{one\+\_\+operand\+\_\+btn\+\_\+click@{one\+\_\+operand\+\_\+btn\+\_\+click}!calculator\+::\+Calc\+Backend@{calculator\+::\+Calc\+Backend}}
+\subsubsection{one\+\_\+operand\+\_\+btn\+\_\+click()}
+{\footnotesize\ttfamily void calculator.\+Calc\+Backend.\+one\+\_\+operand\+\_\+btn\+\_\+click (\begin{DoxyParamCaption}\item[{string}]{operation }\end{DoxyParamCaption})}
+
+
+
+Action after pressing the operation button which requires only one operand 
+
+
+\begin{DoxyParams}{Parameters}
+{\em operation} & Selected operation\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 261 of file Calc\+Backend.\+cs.
+
+
+\begin{DoxyCode}
+261                                                             \{
+262             \textcolor{keywordflow}{if} (display.Text != \textcolor{stringliteral}{"Chyba!"})
+263             \{
+264                 \textcolor{keywordflow}{try}
+265                 \{
+266                     \textcolor{keywordflow}{switch} (operation)
+267                     \{
+268                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"!"}:
+269                             \textcolor{keywordflow}{if} (display.Text.Length != 0)
+270                             \{
+271                                 show\_number(Math.Fact(dispString\_to\_numb(display.Text)));
+272                                 insert\_mode = \textcolor{keyword}{false};
+273                             \}
+274                             \textcolor{keywordflow}{break};
+275                         \textcolor{keywordflow}{default}:
+276                             \textcolor{keywordflow}{break};
+277                     \}
+278                 \}
+279                 \textcolor{keywordflow}{catch} (Exception)
+280                 \{
+281                     display.Text = \textcolor{stringliteral}{"Chyba!"};
+282                     \textcolor{keywordflow}{return};
+283                 \}
+284             \}
+285         \}
+\end{DoxyCode}
+\mbox{\label{classcalculator_1_1_calc_backend_ab9c60c2990db09350499c46874be5960}} 
+\index{calculator\+::\+Calc\+Backend@{calculator\+::\+Calc\+Backend}!point\+\_\+btn\+\_\+click@{point\+\_\+btn\+\_\+click}}
+\index{point\+\_\+btn\+\_\+click@{point\+\_\+btn\+\_\+click}!calculator\+::\+Calc\+Backend@{calculator\+::\+Calc\+Backend}}
+\subsubsection{point\+\_\+btn\+\_\+click()}
+{\footnotesize\ttfamily void calculator.\+Calc\+Backend.\+point\+\_\+btn\+\_\+click (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Action after pressing the coma button 
+
+
+
+Definition at line 250 of file Calc\+Backend.\+cs.
+
+
+\begin{DoxyCode}
+251         \{
+252             \textcolor{keywordflow}{if} (display.Text != \textcolor{stringliteral}{"Chyba!"})
+253                 \textcolor{keywordflow}{if} (insert\_mode && display.Text.Length > 0 && !display.Text.Contains(\textcolor{charliteral}{','}))
+254                     display.Text += \textcolor{stringliteral}{","};
+255         \}
+\end{DoxyCode}
+\mbox{\label{classcalculator_1_1_calc_backend_a45fde6192385602edceb072b3a679887}} 
+\index{calculator\+::\+Calc\+Backend@{calculator\+::\+Calc\+Backend}!two\+\_\+operand\+\_\+btn\+\_\+click@{two\+\_\+operand\+\_\+btn\+\_\+click}}
+\index{two\+\_\+operand\+\_\+btn\+\_\+click@{two\+\_\+operand\+\_\+btn\+\_\+click}!calculator\+::\+Calc\+Backend@{calculator\+::\+Calc\+Backend}}
+\subsubsection{two\+\_\+operand\+\_\+btn\+\_\+click()}
+{\footnotesize\ttfamily void calculator.\+Calc\+Backend.\+two\+\_\+operand\+\_\+btn\+\_\+click (\begin{DoxyParamCaption}\item[{string}]{operation }\end{DoxyParamCaption})}
+
+
+
+Action after pressing the operation button which requires two operands 
+
+
+\begin{DoxyParams}{Parameters}
+{\em operation} & Selected operation\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 291 of file Calc\+Backend.\+cs.
+
+
+\begin{DoxyCode}
+292         \{
+293             \textcolor{keywordflow}{if} (display.Text != \textcolor{stringliteral}{"Chyba!"})
+294             \{
+295                 \textcolor{keywordflow}{if} (operation == \textcolor{stringliteral}{""})
+296                 \{
+297                     \textcolor{keywordflow}{if} (was\_firstTime\_click)
+298                     \{
+299                         firstTime\_click = \textcolor{keyword}{true};
+300                         was\_firstTime\_click = \textcolor{keyword}{false};
+301                     \}
+302                     lastOperator = \textcolor{stringliteral}{""};
+303                     insert\_mode = \textcolor{keyword}{true};
+304                 \}
+305                 \textcolor{keywordflow}{else}
+306                 \{
+307                     \textcolor{keywordflow}{if} (firstTime\_click)
+308                     \{
+309                         operand1 = dispString\_to\_numb(display.Text);
+310                         firstTime\_click = \textcolor{keyword}{false};
+311                         insert\_mode = \textcolor{keyword}{false};
+312                         was\_firstTime\_click = \textcolor{keyword}{true};
+313                         lastOperator = operation;
+314                     \}
+315                     \textcolor{keywordflow}{else}
+316                     \{
+317                         do\_math\_operation();
+318                         lastOperator = operation;
+319                         display.Text = \textcolor{stringliteral}{""} + operand1;
+320                         insert\_mode = \textcolor{keyword}{false};
+321                         was\_firstTime\_click = \textcolor{keyword}{false};
+322                     \}
+323 
+324                 \}
+325             \}
+326         \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Calc\+Backend.\+cs}\end{DoxyCompactItemize}
