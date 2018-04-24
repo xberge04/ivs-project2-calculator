@@ -410,9 +410,9 @@
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true" CornerRadius="10">
                             <Grid HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="60">
-                                <TextBlock HorizontalAlignment="Left" Height="28.667" TextWrapping="Wrap" VerticalAlignment="Top" Width="30.583" Foreground="#FFFF6C6C" FontSize="24" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" Margin="28.417,0,0,0"><Run FontSize="25" Text="√"/><Run Text="x"/></TextBlock>
-                                <TextBlock x:Name="___TextBlock___a_" HorizontalAlignment="Left" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" Width="13.667" Foreground="#FFFF6C6C" FontSize="14" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" Margin="29.5,-3.078,0,0"><Run Text="y"/></TextBlock>
-                                <Rectangle Fill="#FFFF6C6C" Height="Auto" RadiusY="0" RadiusX="0" Stroke="#FFFF6C6C" Width="Auto" RenderTransformOrigin="0.481,-1.117" Margin="40.536,3.54,5.588,55.089"/>
+                                <TextBlock HorizontalAlignment="Left" Height="28.667" TextWrapping="Wrap" VerticalAlignment="Top" Width="30.583" Foreground="#FFFF6C6C" FontSize="24" FontFamily="Century Gothic" Margin="28.417,0,0,0"><Run FontSize="25" Text="√"/><Run Text="x"/></TextBlock>
+                                <TextBlock x:Name="___TextBlock___a_" HorizontalAlignment="Left" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" Width="13.667" Foreground="#FFFF6C6C" FontSize="12" FontFamily="Century Gothic" Margin="29.5,-3.078,0,0"><Run Text="y"/></TextBlock>
+                                <Rectangle Fill="#FFFF6C6C" Height="Auto" RadiusY="0" RadiusX="0" Stroke="#FFFF6C6C" Width="Auto" RenderTransformOrigin="0.481,-1.117" Margin="41.22,1.62,5.9,57.196"/>
                             </Grid>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -450,8 +450,8 @@
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true" CornerRadius="10">
                             <Grid HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="60">
-                                <TextBlock HorizontalAlignment="Left" Height="28.667" Margin="13.5,2.168,-3.5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Foreground="#FFFF6C6C" FontSize="24" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight"><Run Text="log "/><Run Text="x"/><Run Text=" "/></TextBlock>
-                                <TextBlock x:Name="___TextBlock___a_" HorizontalAlignment="Left" Height="15" Margin="41.67,15.524,0,0" TextWrapping="Wrap" Text="a" VerticalAlignment="Top" Width="13.667" Foreground="#FFFF6C6C" FontSize="14" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight"/>
+                                <TextBlock HorizontalAlignment="Left" Height="28.667" Margin="12,2.168,-2,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Foreground="#FFFF6C6C" FontSize="20" FontFamily="Century Gothic"><Run Text="log "/><Run Text="x"/><Run Text=" "/></TextBlock>
+                                <TextBlock x:Name="___TextBlock___a_" HorizontalAlignment="Left" Height="15" Margin="41.17,16.274,0,0" TextWrapping="Wrap" Text="a" VerticalAlignment="Top" Width="13.667" Foreground="#FFFF6C6C" FontSize="10" FontFamily="Century Gothic"/>
                             </Grid>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -489,9 +489,9 @@
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true" CornerRadius="10">
                             <Grid HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="60">
-                                <TextBlock HorizontalAlignment="Left" Height="28.667" Margin="41.666,2.503,-4.666,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="23" Foreground="White" FontSize="25" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight"><Run Text="/"/><LineBreak/><Run/></TextBlock>
-                                <TextBlock HorizontalAlignment="Left" Height="18.333" Margin="46.999,4.71,-0.666,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Width="13.667" Foreground="White" FontSize="25" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight"/>
-                                <TextBlock HorizontalAlignment="Left" Height="23.666" Margin="35.667,-3.824,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" Width="13.667" Foreground="White" FontSize="25" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight"/>
+                                <TextBlock HorizontalAlignment="Left" Height="28.667" Margin="41.666,2.503,-4.666,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="23" Foreground="White" FontSize="20" FontFamily="Century Gothic"><Run FontSize="24" Text="/"/><LineBreak/><Run/></TextBlock>
+                                <TextBlock HorizontalAlignment="Left" Height="18.333" Margin="48.249,14.71,-1.916,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Width="13.667" Foreground="White" FontSize="14" FontFamily="Century Gothic"/>
+                                <TextBlock HorizontalAlignment="Left" Height="23.666" Margin="39.167,5.176,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" Width="13.667" Foreground="White" FontSize="12" FontFamily="Century Gothic"/>
                             </Grid>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -528,7 +528,7 @@
                 <ColumnDefinition Width="350"/>
                 <ColumnDefinition Width="14"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="btn_0" Content="0" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Bottom" Width="130" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF666666" BorderBrush="{x:Null}" Foreground="White" Click="btn_0_Click" Style="{DynamicResource Button_num_style}" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" FontSize="25">
+            <Button x:Name="btn_0" Content="0" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Bottom" Width="130" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF666666" BorderBrush="{x:Null}" Foreground="White" Click="btn_0_Click" Style="{DynamicResource Button_num_style}" FontFamily="Century Gothic" FontSize="24">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -538,7 +538,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btn_1" Content="1" HorizontalAlignment="Left" Margin="0,0,0,70" Width="60" RenderTransformOrigin="0,0" Height="60" BorderThickness="0" Background="#FF666666" BorderBrush="{x:Null}" Foreground="White" VerticalAlignment="Bottom" Click="btn_1_Click" Style="{DynamicResource Button_num_style}" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" FontSize="25">
+            <Button x:Name="btn_1" Content="1" HorizontalAlignment="Left" Margin="0,0,0,70" Width="60" RenderTransformOrigin="0,0" Height="60" BorderThickness="0" Background="#FF666666" BorderBrush="{x:Null}" Foreground="White" VerticalAlignment="Bottom" Click="btn_1_Click" Style="{DynamicResource Button_num_style}" FontFamily="Century Gothic" FontSize="24">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -548,7 +548,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btn_2" Content="2" HorizontalAlignment="Left" Margin="70,0,0,70" VerticalAlignment="Bottom" Width="60" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF666666" BorderBrush="{x:Null}" Foreground="White" Click="btn_2_Click" Style="{DynamicResource Button_num_style}" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" FontSize="25">
+            <Button x:Name="btn_2" Content="2" HorizontalAlignment="Left" Margin="70,0,0,70" VerticalAlignment="Bottom" Width="60" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF666666" BorderBrush="{x:Null}" Foreground="White" Click="btn_2_Click" Style="{DynamicResource Button_num_style}" FontFamily="Century Gothic" FontSize="24">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -558,7 +558,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btn_3" Content="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="60" Margin="140,0,0,70" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF666666" BorderBrush="{x:Null}" Foreground="White" Click="btn_3_Click" Style="{DynamicResource Button_num_style}" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" FontSize="25">
+            <Button x:Name="btn_3" Content="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="60" Margin="140,0,0,70" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF666666" BorderBrush="{x:Null}" Foreground="White" Click="btn_3_Click" Style="{DynamicResource Button_num_style}" FontFamily="Century Gothic" FontSize="24">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -568,7 +568,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btn_4" Content="4" HorizontalAlignment="Left" Margin="0,0,0,140" Width="60" BorderThickness="0" Height="60" RenderTransformOrigin="0.5,0.5" Background="#FF666666" BorderBrush="{x:Null}" Foreground="White" VerticalAlignment="Bottom" Click="btn_4_Click" Style="{DynamicResource Button_num_style}" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" FontSize="25">
+            <Button x:Name="btn_4" Content="4" HorizontalAlignment="Left" Margin="0,0,0,140" Width="60" BorderThickness="0" Height="60" RenderTransformOrigin="0.5,0.5" Background="#FF666666" BorderBrush="{x:Null}" Foreground="White" VerticalAlignment="Bottom" Click="btn_4_Click" Style="{DynamicResource Button_num_style}" FontFamily="Century Gothic" FontSize="24">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -578,7 +578,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btn_5" Content="5" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="60" Margin="70,0,0,140" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF666666" BorderBrush="{x:Null}" Foreground="White" Click="btn_5_Click" Style="{DynamicResource Button_num_style}" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" FontSize="25">
+            <Button x:Name="btn_5" Content="5" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="60" Margin="70,0,0,140" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF666666" BorderBrush="{x:Null}" Foreground="White" Click="btn_5_Click" Style="{DynamicResource Button_num_style}" FontFamily="Century Gothic" FontSize="24">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -588,7 +588,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btn_6" Content="6" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="60" Margin="140,0,0,140" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF666666" BorderBrush="{x:Null}" Foreground="White" Click="btn_6_Click" Style="{DynamicResource Button_num_style}" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" FontSize="25">
+            <Button x:Name="btn_6" Content="6" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="60" Margin="140,0,0,140" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF666666" BorderBrush="{x:Null}" Foreground="White" Click="btn_6_Click" Style="{DynamicResource Button_num_style}" FontFamily="Century Gothic" FontSize="24">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -598,7 +598,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btn_7" Content="7" HorizontalAlignment="Left" Margin="0,0,0,210" Width="60" BorderThickness="0" Height="60" RenderTransformOrigin="0.5,0.5" Background="#FF666666" BorderBrush="{x:Null}" Foreground="White" VerticalAlignment="Bottom" Click="btn_7_Click" Style="{DynamicResource Button_num_style}" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" FontSize="25">
+            <Button x:Name="btn_7" Content="7" HorizontalAlignment="Left" Margin="0,0,0,210" Width="60" BorderThickness="0" Height="60" RenderTransformOrigin="0.5,0.5" Background="#FF666666" BorderBrush="{x:Null}" Foreground="White" VerticalAlignment="Bottom" Click="btn_7_Click" Style="{DynamicResource Button_num_style}" FontFamily="Century Gothic" FontSize="24">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -608,7 +608,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btn_8" Content="8" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="60" Margin="70,0,0,210" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF666666" BorderBrush="{x:Null}" Foreground="White" Click="btn_8_Click" Style="{DynamicResource Button_num_style}" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" FontSize="25">
+            <Button x:Name="btn_8" Content="8" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="60" Margin="70,0,0,210" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF666666" BorderBrush="{x:Null}" Foreground="White" Click="btn_8_Click" Style="{DynamicResource Button_num_style}" FontFamily="Century Gothic" FontSize="24">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -618,7 +618,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btn_9" Content="9" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="60" Margin="140,0,0,210" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF666666" BorderBrush="{x:Null}" Foreground="White" Click="btn_9_Click" Style="{DynamicResource Button_num_style}" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" FontSize="25">
+            <Button x:Name="btn_9" Content="9" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="60" Margin="140,0,0,210" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF666666" BorderBrush="{x:Null}" Foreground="White" Click="btn_9_Click" Style="{DynamicResource Button_num_style}" FontFamily="Century Gothic" FontSize="24">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -628,7 +628,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btn_point" Content=", " HorizontalAlignment="Left" Width="60" Margin="140,0,0,0" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF666666" BorderBrush="{x:Null}" Foreground="White" Click="btn_point_Click" Style="{DynamicResource Button_num_style}" Height="60" VerticalAlignment="Bottom" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" FontSize="25">
+            <Button x:Name="btn_point" Content=", " HorizontalAlignment="Left" Width="60" Margin="140,0,0,0" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF666666" BorderBrush="{x:Null}" Foreground="White" Click="btn_point_Click" Style="{DynamicResource Button_num_style}" Height="60" VerticalAlignment="Bottom" FontFamily="Century Gothic" FontSize="24">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -638,7 +638,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btn_invert" Content="+/-" HorizontalAlignment="Left" Width="60" Margin="0,0,0,280" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" BorderBrush="{x:Null}" Foreground="White" VerticalAlignment="Bottom" Style="{DynamicResource ButtonStyle9}" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" FontSize="25" Click="btn_invert_Click">
+            <Button x:Name="btn_invert" Content="+/-" HorizontalAlignment="Left" Width="60" Margin="0,0,0,280" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" BorderBrush="{x:Null}" Foreground="White" VerticalAlignment="Bottom" Style="{DynamicResource ButtonStyle9}" FontFamily="Century Gothic" FontSize="24" Click="btn_invert_Click">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -648,7 +648,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btn_minus" Content="-" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="60" Margin="210,0,0,210" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" Foreground="#FFFF6C6C" BorderBrush="#FF666666" Style="{DynamicResource Button_num_style}" FontSize="25" Click="btn_minus_Click">
+            <Button x:Name="btn_minus" Content="-" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="60" Margin="210,0,0,210" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" Foreground="#FFFF6C6C" BorderBrush="#FF666666" Style="{DynamicResource Button_num_style}" FontSize="24" Click="btn_minus_Click" FontFamily="Century Gothic">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -658,7 +658,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btn_div" Content="/" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="60" Margin="280,0,0,210" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" Foreground="#FFFF6C6C" BorderBrush="#FF666666" Style="{DynamicResource Button_num_style}" FontSize="25" Click="btn_div_Click" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight">
+            <Button x:Name="btn_div" Content="/" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="60" Margin="280,0,0,210" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" Foreground="#FFFF6C6C" BorderBrush="#FF666666" Style="{DynamicResource Button_num_style}" FontSize="24" Click="btn_div_Click" FontFamily="Century Gothic">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -668,7 +668,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btn_log" Content="log" HorizontalAlignment="Left" Width="60" Margin="70,0,0,280" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" Foreground="#FFFF6C6C" BorderBrush="#FF666666" VerticalAlignment="Bottom" Style="{DynamicResource ButtonStyle8}" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" FontSize="25" Click="btn_log_Click">
+            <Button x:Name="btn_log" Content="log" HorizontalAlignment="Left" Width="60" Margin="70,0,0,280" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" Foreground="#FFFF6C6C" BorderBrush="#FF666666" VerticalAlignment="Bottom" Style="{DynamicResource ButtonStyle8}" FontFamily="Century Gothic" FontSize="24" Click="btn_log_Click">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -678,7 +678,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btn_C" Content="C" HorizontalAlignment="Left" Width="60" Margin="280,0,0,0" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FFFF6C6C" BorderBrush="{x:Null}" Click="btn_C_Click" Style="{DynamicResource Button_num_style}" Height="60" VerticalAlignment="Bottom" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" FontSize="25">
+            <Button x:Name="btn_C" Content="C" HorizontalAlignment="Left" Width="60" Margin="280,0,0,0" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FFFF6C6C" BorderBrush="{x:Null}" Click="btn_C_Click" Style="{DynamicResource Button_num_style}" Height="60" VerticalAlignment="Bottom" FontFamily="Century Gothic" FontSize="24">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -688,7 +688,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btn_back_arr" Content="←" HorizontalAlignment="Left" Width="60" Margin="280,0,0,70" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FFFF6C6C" BorderBrush="{x:Null}" Click="btn_back_arr_Click" Style="{DynamicResource Button_num_style_pi}" Height="60" VerticalAlignment="Bottom" FontSize="25" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight">
+            <Button x:Name="btn_back_arr" Content="←" HorizontalAlignment="Left" Width="60" Margin="280,0,0,70" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FFFF6C6C" BorderBrush="{x:Null}" Click="btn_back_arr_Click" Style="{DynamicResource Button_num_style_pi}" Height="60" VerticalAlignment="Bottom" FontSize="24" FontFamily="Century Gothic">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -698,7 +698,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btn_plus" Content="+" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="60" Margin="210,0,0,140" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" Foreground="#FFFF6C6C" BorderBrush="#FF666666" Style="{DynamicResource Button_num_style}" FontSize="25" Click="btn_plus_Click">
+            <Button x:Name="btn_plus" Content="+" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="60" Margin="210,0,0,140" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" Foreground="#FFFF6C6C" BorderBrush="#FF666666" Style="{DynamicResource Button_num_style}" FontSize="24" Click="btn_plus_Click" FontFamily="Century Gothic">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -708,7 +708,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btn_eq" Content="=" HorizontalAlignment="Left" Width="60" Margin="210,0,0,0" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" Foreground="#FFFF6C6C" BorderBrush="{x:Null}" Style="{DynamicResource Button_num_style}" Height="130" VerticalAlignment="Bottom" FontSize="25" Click="btn_eq_Click">
+            <Button x:Name="btn_eq" Content="=" HorizontalAlignment="Left" Width="60" Margin="210,0,0,0" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" Foreground="#FFFF6C6C" BorderBrush="{x:Null}" Style="{DynamicResource Button_num_style}" Height="130" VerticalAlignment="Bottom" FontSize="24" Click="btn_eq_Click" FontFamily="Century Gothic">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -718,7 +718,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btn_mul" Content="*" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="60" Margin="280,0,0,140" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" Foreground="#FFFF6C6C" BorderBrush="#FF666666" Style="{DynamicResource Button_num_style}" FontSize="25" Click="btn_mul_Click">
+            <Button x:Name="btn_mul" Content="*" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="60" Margin="280,0,0,140" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" Foreground="#FFFF6C6C" BorderBrush="#FF666666" Style="{DynamicResource Button_num_style}" FontSize="24" Click="btn_mul_Click" FontFamily="Century Gothic">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -728,7 +728,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btn_sqrt" Content='√' HorizontalAlignment="Left" Width="60" Margin="210,0,0,280" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" Foreground="#FFFF6C6C" BorderBrush="#FF666666" VerticalAlignment="Bottom" Style="{DynamicResource ButtonStyle7}" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" FontSize="25" Click="btn_sqrt_Click">
+            <Button x:Name="btn_sqrt" Content='√' HorizontalAlignment="Left" Width="60" Margin="210,0,0,280" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" Foreground="#FFFF6C6C" BorderBrush="#FF666666" VerticalAlignment="Bottom" Style="{DynamicResource ButtonStyle7}" FontFamily="Century Gothic" FontSize="24" Click="btn_sqrt_Click">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -738,7 +738,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btn_fact" Content="x!" HorizontalAlignment="Left" Width="60" Margin="140,0,0,280" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" Foreground="#FFFF6C6C" BorderBrush="{x:Null}" VerticalAlignment="Bottom" Style="{DynamicResource Button_num_style}" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" FontSize="25" Click="btn_fact_Click">
+            <Button x:Name="btn_fact" Content="x!" HorizontalAlignment="Left" Width="60" Margin="140,0,0,280" Height="60" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" Foreground="#FFFF6C6C" BorderBrush="{x:Null}" VerticalAlignment="Bottom" Style="{DynamicResource Button_num_style}" FontFamily="Century Gothic" FontSize="24" Click="btn_fact_Click">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -755,7 +755,7 @@
                         <GradientStop Color="Black" Offset="1"/>
                     </LinearGradientBrush>
                 </TextBlock.Foreground></TextBlock>
-            <Button x:Name="btn_pow" Content="(x)y" HorizontalAlignment="Left" Width="60" Margin="280,0,0,280" BorderThickness="0" Height="60" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" Foreground="#FFFF6C6C" BorderBrush="#FF666666" VerticalAlignment="Bottom" Style="{DynamicResource ButtonStyle6}" FontFamily="/calculator;component/Properties/Fonts/#GeosansLight" FontSize="25" Click="btn_pow_Click">
+            <Button x:Name="btn_pow" Content="(x)y" HorizontalAlignment="Left" Width="60" Margin="280,0,0,280" BorderThickness="0" Height="60" RenderTransformOrigin="0.5,0.5" Background="#FF1A1A1A" Foreground="#FFFF6C6C" BorderBrush="#FF666666" VerticalAlignment="Bottom" Style="{DynamicResource ButtonStyle6}" FontFamily="Century Gothic" FontSize="24" Click="btn_pow_Click">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
