@@ -1,18 +1,19 @@
 
 pack_name=xnacar00_xberge04_xsebel04_xforma14
-path_calculator=calculator\calculator\bin\Release\calculator.exe
-calc_name=.\Calculator\
+path_calculator=C:'Program Files (x86)'
+path_to_exe=Calculator/calculator.exe
+pack_names=src,profiling, mockup, plan, *.*
 
 .PHONY: all pack clean run
 
 all: clean pack run
 
 pack:
-	cd .. ; cd ..; powershell -command "& {Compress-Archive$(calc_name) $(pack_name).zip}"
+	cd .. ; powershell -command "& {Compress-Archive $(pack_names) $(pack_name).zip}"
 clean:
-	cd .. ; cd ..; powershell -command "& {Remove-Item $(pack_name).zip}"
+	cd .. ; powershell -command "& {Remove-Item $(pack_name).zip}"
 run:
-	$(path_calculator)
+	cd $(path_calculator) && ./$(path_to_exe)
 	
 	
 	
