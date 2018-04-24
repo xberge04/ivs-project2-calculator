@@ -1,0 +1,394 @@
+\section{calculator.\+Math\+\_\+\+Library.\+Math Class Reference}
+\label{classcalculator_1_1_math___library_1_1_math}\index{calculator.\+Math\+\_\+\+Library.\+Math@{calculator.\+Math\+\_\+\+Library.\+Math}}
+
+
+Mathematics library for creating our calculator application.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Math} ()
+\item 
+double \textbf{ Add} (double num1, double num2)
+\begin{DoxyCompactList}\small\item\em Function of addition. \end{DoxyCompactList}\item 
+double \textbf{ Sub} (double num1, double num2)
+\begin{DoxyCompactList}\small\item\em Function of subtraction. \end{DoxyCompactList}\item 
+double \textbf{ Mul} (double num1, double num2)
+\begin{DoxyCompactList}\small\item\em Function of multiplying. \end{DoxyCompactList}\item 
+double \textbf{ Div} (double num1, double num2)
+\begin{DoxyCompactList}\small\item\em Function of dividing. \end{DoxyCompactList}\item 
+double \textbf{ Pow} (double num1, double num2)
+\begin{DoxyCompactList}\small\item\em Function of exponentiation. \end{DoxyCompactList}\item 
+double \textbf{ Pow\+For\+Root} (double num1, double num2)
+\item 
+double \textbf{ Root} (double num1, double num2)
+\begin{DoxyCompactList}\small\item\em Function of root. \end{DoxyCompactList}\item 
+ulong \textbf{ Fact} (double num1)
+\begin{DoxyCompactList}\small\item\em Factorial function. \end{DoxyCompactList}\item 
+double \textbf{ Log} (double num1, double num2)
+\begin{DoxyCompactList}\small\item\em Logarithm function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Mathematics library for creating our calculator application. 
+
+
+
+Definition at line 13 of file Math.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classcalculator_1_1_math___library_1_1_math_a96a230afc56ca8564b134c5b39527394}} 
+\index{calculator\+::\+Math\+\_\+\+Library\+::\+Math@{calculator\+::\+Math\+\_\+\+Library\+::\+Math}!Math@{Math}}
+\index{Math@{Math}!calculator\+::\+Math\+\_\+\+Library\+::\+Math@{calculator\+::\+Math\+\_\+\+Library\+::\+Math}}
+\subsubsection{Math()}
+{\footnotesize\ttfamily calculator.\+Math\+\_\+\+Library.\+Math.\+Math (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 15 of file Math.\+cs.
+
+
+\begin{DoxyCode}
+16         \{
+17 
+18         \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classcalculator_1_1_math___library_1_1_math_ac53c06d474ea149e15eb5779421cb030}} 
+\index{calculator\+::\+Math\+\_\+\+Library\+::\+Math@{calculator\+::\+Math\+\_\+\+Library\+::\+Math}!Add@{Add}}
+\index{Add@{Add}!calculator\+::\+Math\+\_\+\+Library\+::\+Math@{calculator\+::\+Math\+\_\+\+Library\+::\+Math}}
+\subsubsection{Add()}
+{\footnotesize\ttfamily double calculator.\+Math\+\_\+\+Library.\+Math.\+Add (\begin{DoxyParamCaption}\item[{double}]{num1,  }\item[{double}]{num2 }\end{DoxyParamCaption})}
+
+
+
+Function of addition. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num1} & First added number.\\
+\hline
+{\em num2} & Second added number.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Sum of these numbers.
+\end{DoxyReturn}
+
+
+Definition at line 26 of file Math.\+cs.
+
+
+\begin{DoxyCode}
+27         \{
+28             \textcolor{keywordtype}{double} result = num1 + num2;
+29             \textcolor{keywordflow}{return} result;
+30         \}
+\end{DoxyCode}
+\mbox{\label{classcalculator_1_1_math___library_1_1_math_aa767a39b7fcee6d4e63e5be56aebb64d}} 
+\index{calculator\+::\+Math\+\_\+\+Library\+::\+Math@{calculator\+::\+Math\+\_\+\+Library\+::\+Math}!Div@{Div}}
+\index{Div@{Div}!calculator\+::\+Math\+\_\+\+Library\+::\+Math@{calculator\+::\+Math\+\_\+\+Library\+::\+Math}}
+\subsubsection{Div()}
+{\footnotesize\ttfamily double calculator.\+Math\+\_\+\+Library.\+Math.\+Div (\begin{DoxyParamCaption}\item[{double}]{num1,  }\item[{double}]{num2 }\end{DoxyParamCaption})}
+
+
+
+Function of dividing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num1} & Dividend.\\
+\hline
+{\em num2} & Divisor.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of devide.
+\end{DoxyReturn}
+
+
+Definition at line 62 of file Math.\+cs.
+
+
+\begin{DoxyCode}
+63         \{
+64             \textcolor{keywordflow}{if}(num2==0)
+65             \{
+66                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} DivideByZeroException();
+67             \}
+68             \textcolor{keywordtype}{double} result = num1 / num2;
+69             \textcolor{keywordflow}{return} result;
+70         \}
+\end{DoxyCode}
+\mbox{\label{classcalculator_1_1_math___library_1_1_math_ad339abe4860ee891b54f9bddc38d1bed}} 
+\index{calculator\+::\+Math\+\_\+\+Library\+::\+Math@{calculator\+::\+Math\+\_\+\+Library\+::\+Math}!Fact@{Fact}}
+\index{Fact@{Fact}!calculator\+::\+Math\+\_\+\+Library\+::\+Math@{calculator\+::\+Math\+\_\+\+Library\+::\+Math}}
+\subsubsection{Fact()}
+{\footnotesize\ttfamily ulong calculator.\+Math\+\_\+\+Library.\+Math.\+Fact (\begin{DoxyParamCaption}\item[{double}]{num1 }\end{DoxyParamCaption})}
+
+
+
+Factorial function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num1} & Positive natural number of factorial.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of factorial.
+\end{DoxyReturn}
+
+
+Definition at line 134 of file Math.\+cs.
+
+
+\begin{DoxyCode}
+135         \{
+136             ulong result = (ulong)num1;
+137             \textcolor{keywordflow}{if} (num1 > 65)
+138             \{
+139                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} ArgumentOutOfRangeException();
+140                 \textcolor{keywordflow}{return} result;
+141             \}
+142             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (num1 > 0 && num1 % 1 == 0)
+143             \{
+144                 \textcolor{keywordflow}{for} (ulong i = ((ulong)num1 - 1); i >= 1; i--)
+145                 \{
+146                     result = result * i;
+147                 \}
+148             \}
+149             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (num1 == 0)
+150             \{
+151                 result = 1;
+152             \}
+153             \textcolor{keywordflow}{else}
+154             \{
+155                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} ArgumentOutOfRangeException();
+156             \}            
+157             \textcolor{keywordflow}{return} result;
+158         \}
+\end{DoxyCode}
+\mbox{\label{classcalculator_1_1_math___library_1_1_math_a64b9fca55fb3d71f14a182623e69dd68}} 
+\index{calculator\+::\+Math\+\_\+\+Library\+::\+Math@{calculator\+::\+Math\+\_\+\+Library\+::\+Math}!Log@{Log}}
+\index{Log@{Log}!calculator\+::\+Math\+\_\+\+Library\+::\+Math@{calculator\+::\+Math\+\_\+\+Library\+::\+Math}}
+\subsubsection{Log()}
+{\footnotesize\ttfamily double calculator.\+Math\+\_\+\+Library.\+Math.\+Log (\begin{DoxyParamCaption}\item[{double}]{num1,  }\item[{double}]{num2 }\end{DoxyParamCaption})}
+
+
+
+Logarithm function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num1} & Base.\\
+\hline
+{\em num2} & Number of logarithm\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of logarithm.
+\end{DoxyReturn}
+
+
+Definition at line 166 of file Math.\+cs.
+
+
+\begin{DoxyCode}
+167         \{
+168             \textcolor{keywordflow}{if}(num1 > 0 && num1 != 1)
+169             \{
+170                 \textcolor{keywordflow}{if} (num2 > 0)
+171                 \{
+172                     \textcolor{keywordtype}{double} result = System.Math.Log(num2, num1);
+173                     \textcolor{keywordflow}{return} result;
+174                 \}
+175                 \textcolor{keywordflow}{else}
+176                 \{
+177                     \textcolor{keywordflow}{throw} \textcolor{keyword}{new} ArgumentOutOfRangeException();
+178                 \}
+179             \}
+180             \textcolor{keywordflow}{else}
+181             \{
+182                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} ArgumentOutOfRangeException();
+183             \}
+184         \}
+\end{DoxyCode}
+\mbox{\label{classcalculator_1_1_math___library_1_1_math_a3e612f989e8e19033dad6146e771d56f}} 
+\index{calculator\+::\+Math\+\_\+\+Library\+::\+Math@{calculator\+::\+Math\+\_\+\+Library\+::\+Math}!Mul@{Mul}}
+\index{Mul@{Mul}!calculator\+::\+Math\+\_\+\+Library\+::\+Math@{calculator\+::\+Math\+\_\+\+Library\+::\+Math}}
+\subsubsection{Mul()}
+{\footnotesize\ttfamily double calculator.\+Math\+\_\+\+Library.\+Math.\+Mul (\begin{DoxyParamCaption}\item[{double}]{num1,  }\item[{double}]{num2 }\end{DoxyParamCaption})}
+
+
+
+Function of multiplying. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num1} & Multiplicand.\\
+\hline
+{\em num2} & Multiplier.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of multiply.
+\end{DoxyReturn}
+
+
+Definition at line 50 of file Math.\+cs.
+
+
+\begin{DoxyCode}
+51         \{
+52             \textcolor{keywordtype}{double} result = num1 * num2;
+53             \textcolor{keywordflow}{return} result;
+54         \}
+\end{DoxyCode}
+\mbox{\label{classcalculator_1_1_math___library_1_1_math_a74ad51da75c3706539da40b3f21e3562}} 
+\index{calculator\+::\+Math\+\_\+\+Library\+::\+Math@{calculator\+::\+Math\+\_\+\+Library\+::\+Math}!Pow@{Pow}}
+\index{Pow@{Pow}!calculator\+::\+Math\+\_\+\+Library\+::\+Math@{calculator\+::\+Math\+\_\+\+Library\+::\+Math}}
+\subsubsection{Pow()}
+{\footnotesize\ttfamily double calculator.\+Math\+\_\+\+Library.\+Math.\+Pow (\begin{DoxyParamCaption}\item[{double}]{num1,  }\item[{double}]{num2 }\end{DoxyParamCaption})}
+
+
+
+Function of exponentiation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num1} & Base.\\
+\hline
+{\em num2} & Exponent.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of exponentiation.
+\end{DoxyReturn}
+
+
+Definition at line 78 of file Math.\+cs.
+
+
+\begin{DoxyCode}
+79         \{
+80             \textcolor{keywordflow}{if} (num2 >= 0 && num2 % 1 == 0)
+81             \{
+82                 \textcolor{keywordtype}{double} result = System.Math.Pow(num1, num2);
+83                 \textcolor{keywordflow}{return} result;
+84             \}
+85             \textcolor{keywordflow}{else}
+86             \{
+87                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} ArgumentOutOfRangeException();
+88             \}
+89         \}
+\end{DoxyCode}
+\mbox{\label{classcalculator_1_1_math___library_1_1_math_ab54a6f914803921d51a360404361aa53}} 
+\index{calculator\+::\+Math\+\_\+\+Library\+::\+Math@{calculator\+::\+Math\+\_\+\+Library\+::\+Math}!Pow\+For\+Root@{Pow\+For\+Root}}
+\index{Pow\+For\+Root@{Pow\+For\+Root}!calculator\+::\+Math\+\_\+\+Library\+::\+Math@{calculator\+::\+Math\+\_\+\+Library\+::\+Math}}
+\subsubsection{Pow\+For\+Root()}
+{\footnotesize\ttfamily double calculator.\+Math\+\_\+\+Library.\+Math.\+Pow\+For\+Root (\begin{DoxyParamCaption}\item[{double}]{num1,  }\item[{double}]{num2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 91 of file Math.\+cs.
+
+
+\begin{DoxyCode}
+92         \{
+93             \textcolor{keywordtype}{double} result = System.Math.Pow(num1, num2);
+94             \textcolor{keywordflow}{return} result;           
+95         \}
+\end{DoxyCode}
+\mbox{\label{classcalculator_1_1_math___library_1_1_math_a19eaa19ee0c15a18df767dbc08191a35}} 
+\index{calculator\+::\+Math\+\_\+\+Library\+::\+Math@{calculator\+::\+Math\+\_\+\+Library\+::\+Math}!Root@{Root}}
+\index{Root@{Root}!calculator\+::\+Math\+\_\+\+Library\+::\+Math@{calculator\+::\+Math\+\_\+\+Library\+::\+Math}}
+\subsubsection{Root()}
+{\footnotesize\ttfamily double calculator.\+Math\+\_\+\+Library.\+Math.\+Root (\begin{DoxyParamCaption}\item[{double}]{num1,  }\item[{double}]{num2 }\end{DoxyParamCaption})}
+
+
+
+Function of root. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num1} & Base.\\
+\hline
+{\em num2} & Exponent of root.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of root.
+\end{DoxyReturn}
+
+
+Definition at line 103 of file Math.\+cs.
+
+
+\begin{DoxyCode}
+104         \{
+105             \textcolor{keywordtype}{double} result = 0;
+106             \textcolor{keywordflow}{if}(num2 == 0)
+107             \{
+108                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} ArgumentOutOfRangeException();
+109             \}
+110             \textcolor{keywordflow}{if} (num2 % 2 == 0)
+111             \{
+112                 \textcolor{keywordflow}{if} (num1 >= 0)
+113                 \{
+114                     result = this.PowForRoot(num1, 1.0 / num2);
+115                 \}
+116                 \textcolor{keywordflow}{else}
+117                 \{
+118                     \textcolor{keywordflow}{throw} \textcolor{keyword}{new} ArgumentOutOfRangeException();
+119                 \}
+120             \}
+121             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(num2 % 2 != 0)
+122             \{
+123                 result = this.PowForRoot(num1, 1.0 / num2);
+124             \}
+125             
+126             \textcolor{keywordflow}{return} result;
+127         \}
+\end{DoxyCode}
+\mbox{\label{classcalculator_1_1_math___library_1_1_math_ad98ea039ae21634fe7df6a25f4b59a34}} 
+\index{calculator\+::\+Math\+\_\+\+Library\+::\+Math@{calculator\+::\+Math\+\_\+\+Library\+::\+Math}!Sub@{Sub}}
+\index{Sub@{Sub}!calculator\+::\+Math\+\_\+\+Library\+::\+Math@{calculator\+::\+Math\+\_\+\+Library\+::\+Math}}
+\subsubsection{Sub()}
+{\footnotesize\ttfamily double calculator.\+Math\+\_\+\+Library.\+Math.\+Sub (\begin{DoxyParamCaption}\item[{double}]{num1,  }\item[{double}]{num2 }\end{DoxyParamCaption})}
+
+
+
+Function of subtraction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num1} & Minuend.\\
+\hline
+{\em num2} & Subtrahend.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Difference.
+\end{DoxyReturn}
+
+
+Definition at line 38 of file Math.\+cs.
+
+
+\begin{DoxyCode}
+39         \{
+40             \textcolor{keywordtype}{double} result = num1 - num2;
+41             \textcolor{keywordflow}{return} result;
+42         \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Math.\+cs}\end{DoxyCompactItemize}

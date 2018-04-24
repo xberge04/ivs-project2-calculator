@@ -1,0 +1,774 @@
+\section{Math\+Library\+Tests.\+Math\+Tests Class Reference}
+\label{class_math_library_tests_1_1_math_tests}\index{Math\+Library\+Tests.\+Math\+Tests@{Math\+Library\+Tests.\+Math\+Tests}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Math\+Tests} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Math\+Tests}{p.}{class_math_library_tests_1_1_math_tests} construct. \end{DoxyCompactList}\item 
+void \textbf{ Root\+Test} ()
+\begin{DoxyCompactList}\small\item\em Root test \end{DoxyCompactList}\item 
+void \textbf{ Pow\+Test} ()
+\begin{DoxyCompactList}\small\item\em Power test \end{DoxyCompactList}\item 
+void \textbf{ Fact\+Test} ()
+\begin{DoxyCompactList}\small\item\em Factorial test \end{DoxyCompactList}\item 
+void \textbf{ Log\+Test} ()
+\begin{DoxyCompactList}\small\item\em Logarithm test \end{DoxyCompactList}\item 
+\textbf{ Math\+Tests} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Math\+Tests}{p.}{class_math_library_tests_1_1_math_tests} construct. \end{DoxyCompactList}\item 
+void \textbf{ Add\+Test} ()
+\begin{DoxyCompactList}\small\item\em Addition test \end{DoxyCompactList}\item 
+void \textbf{ Sub\+Test} ()
+\begin{DoxyCompactList}\small\item\em Substraction test \end{DoxyCompactList}\item 
+void \textbf{ Mul\+Test} ()
+\begin{DoxyCompactList}\small\item\em Multiplication test \end{DoxyCompactList}\item 
+void \textbf{ Div\+Test} ()
+\begin{DoxyCompactList}\small\item\em Division test \end{DoxyCompactList}\item 
+void \textbf{ Add\+Test} ()
+\item 
+void \textbf{ Sub\+Test} ()
+\begin{DoxyCompactList}\small\item\em Substraction test \end{DoxyCompactList}\item 
+void \textbf{ Mul\+Test} ()
+\begin{DoxyCompactList}\small\item\em Multiplication test \end{DoxyCompactList}\item 
+void \textbf{ Div\+Test} ()
+\begin{DoxyCompactList}\small\item\em Division test \end{DoxyCompactList}\item 
+void \textbf{ Root\+Test} ()
+\begin{DoxyCompactList}\small\item\em Root test \end{DoxyCompactList}\item 
+void \textbf{ Pow\+Test} ()
+\begin{DoxyCompactList}\small\item\em Power test \end{DoxyCompactList}\item 
+void \textbf{ Fact\+Test} ()
+\begin{DoxyCompactList}\small\item\em Factorial test \end{DoxyCompactList}\item 
+void \textbf{ Log\+Test} ()
+\begin{DoxyCompactList}\small\item\em Logarithm test \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 9 of file Advanced\+Methods\+Tests.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_math_library_tests_1_1_math_tests_a01dffcc8eb3d168c530221ae55a27a3f}} 
+\index{Math\+Library\+Tests\+::\+Math\+Tests@{Math\+Library\+Tests\+::\+Math\+Tests}!Math\+Tests@{Math\+Tests}}
+\index{Math\+Tests@{Math\+Tests}!Math\+Library\+Tests\+::\+Math\+Tests@{Math\+Library\+Tests\+::\+Math\+Tests}}
+\subsubsection{Math\+Tests()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Math\+Library\+Tests.\+Math\+Tests.\+Math\+Tests (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxyref{Math\+Tests}{p.}{class_math_library_tests_1_1_math_tests} construct. 
+
+
+
+Definition at line 18 of file Advanced\+Methods\+Tests.\+cs.
+
+
+\begin{DoxyCode}
+19         \{
+20             math = \textcolor{keyword}{new} Math();
+21         \}
+\end{DoxyCode}
+\mbox{\label{class_math_library_tests_1_1_math_tests_a01dffcc8eb3d168c530221ae55a27a3f}} 
+\index{Math\+Library\+Tests\+::\+Math\+Tests@{Math\+Library\+Tests\+::\+Math\+Tests}!Math\+Tests@{Math\+Tests}}
+\index{Math\+Tests@{Math\+Tests}!Math\+Library\+Tests\+::\+Math\+Tests@{Math\+Library\+Tests\+::\+Math\+Tests}}
+\subsubsection{Math\+Tests()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Math\+Library\+Tests.\+Math\+Tests.\+Math\+Tests (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxyref{Math\+Tests}{p.}{class_math_library_tests_1_1_math_tests} construct. 
+
+
+
+Definition at line 18 of file Basic\+Methods\+Tests.\+cs.
+
+
+\begin{DoxyCode}
+19         \{
+20             math = \textcolor{keyword}{new} Math();
+21         \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_math_library_tests_1_1_math_tests_aaec911015751955586b00c63fae2d75a}} 
+\index{Math\+Library\+Tests\+::\+Math\+Tests@{Math\+Library\+Tests\+::\+Math\+Tests}!Add\+Test@{Add\+Test}}
+\index{Add\+Test@{Add\+Test}!Math\+Library\+Tests\+::\+Math\+Tests@{Math\+Library\+Tests\+::\+Math\+Tests}}
+\subsubsection{Add\+Test()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Math\+Library\+Tests.\+Math\+Tests.\+Add\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 18 of file Math\+Tests.\+cs.
+
+
+\begin{DoxyCode}
+19         \{
+20             Assert.AreEqual(0, math.Add(0, 0));
+21             Assert.AreEqual(20, math.Add(5, 15));
+22             Assert.AreEqual(-12, math.Add(60, -72));
+23             Assert.AreEqual(-10, math.Add(-6, -4));
+24             Assert.AreEqual(48, math.Add(50, -2));
+25             Assert.AreEqual(-4000000, math.Add(-7000000, 3000000));
+26             Assert.AreEqual(128, math.Add(-128, 256));
+27             Assert.AreEqual(4.2, math.Add(6, -1.8), Exactness);
+28             Assert.AreEqual(0.5, math.Add(0.15, 0.35), Exactness);
+29             Assert.AreEqual(10.65, math.Add(10.1, 0.55), Exactness);
+30             Assert.AreEqual(-0.32564, math.Add(0, -0.32564), Exactness);
+31             Assert.AreEqual(2.3256, math.Add(2, 0.3256), Exactness);
+32             Assert.AreEqual(200000000, math.Add(100000000, 100000000));
+33         \}
+\end{DoxyCode}
+\mbox{\label{class_math_library_tests_1_1_math_tests_aaec911015751955586b00c63fae2d75a}} 
+\index{Math\+Library\+Tests\+::\+Math\+Tests@{Math\+Library\+Tests\+::\+Math\+Tests}!Add\+Test@{Add\+Test}}
+\index{Add\+Test@{Add\+Test}!Math\+Library\+Tests\+::\+Math\+Tests@{Math\+Library\+Tests\+::\+Math\+Tests}}
+\subsubsection{Add\+Test()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Math\+Library\+Tests.\+Math\+Tests.\+Add\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Addition test 
+
+
+
+Definition at line 27 of file Basic\+Methods\+Tests.\+cs.
+
+
+\begin{DoxyCode}
+28         \{
+29             Assert.AreEqual(0, math.Add(0, 0));
+30             Assert.AreEqual(20, math.Add(5, 15));
+31             Assert.AreEqual(-12, math.Add(60, -72));
+32             Assert.AreEqual(-10, math.Add(-6, -4));
+33             Assert.AreEqual(48, math.Add(50, -2));
+34             Assert.AreEqual(-4000000, math.Add(-7000000, 3000000));
+35             Assert.AreEqual(128, math.Add(-128, 256));
+36             Assert.AreEqual(4.2, math.Add(6, -1.8), Exactness);
+37             Assert.AreEqual(0.5, math.Add(0.15, 0.35), Exactness);
+38             Assert.AreEqual(10.65, math.Add(10.1, 0.55), Exactness);
+39             Assert.AreEqual(-0.32564, math.Add(0, -0.32564), Exactness);
+40             Assert.AreEqual(2.3256, math.Add(2, 0.3256), Exactness);
+41             Assert.AreEqual(200000000, math.Add(100000000, 100000000));
+42         \}
+\end{DoxyCode}
+\mbox{\label{class_math_library_tests_1_1_math_tests_a47f8227d06bc3d2bb41731f8cd2ba983}} 
+\index{Math\+Library\+Tests\+::\+Math\+Tests@{Math\+Library\+Tests\+::\+Math\+Tests}!Div\+Test@{Div\+Test}}
+\index{Div\+Test@{Div\+Test}!Math\+Library\+Tests\+::\+Math\+Tests@{Math\+Library\+Tests\+::\+Math\+Tests}}
+\subsubsection{Div\+Test()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Math\+Library\+Tests.\+Math\+Tests.\+Div\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Division test 
+
+divided by zero
+
+Definition at line 81 of file Math\+Tests.\+cs.
+
+
+\begin{DoxyCode}
+82         \{
+83             Assert.AreEqual(0, math.Div(0, 5));
+84             Assert.AreEqual(1, math.Div(10, 10));
+85             Assert.AreEqual(1, math.Div(-10, -10));
+86             Assert.AreEqual(-1, math.Div(-10, 10));
+87             Assert.AreEqual(-1, math.Div(10, -10));
+88             Assert.AreEqual(-5, math.Div(-100000000, 20000000));
+89             Assert.AreEqual(0.5, math.Div(1, 2), Exactness);
+90             Assert.AreEqual(-0.625, math.Div(-5, 8), Exactness);
+91             Assert.AreEqual(0.5, math.Div(128, 256));
+92             Assert.AreEqual(6.4127039, math.Div(42.6541, 6.6515), Exactness);
+93             Assert.AreEqual(4, math.Div(1, 0.25), Exactness);
+94 
+95 
+97             \textcolor{keywordtype}{string} noFailMessage = \textcolor{stringliteral}{"No exception message after dividing by zero."};
+98 
+99             \textcolor{keywordflow}{try}
+100             \{
+101                 math.Div(2, 0);
+102                 Assert.Fail(noFailMessage);
+103             \}
+104             \textcolor{keywordflow}{catch} (Exception)
+105             \{
+106             \}
+107         \}
+\end{DoxyCode}
+\mbox{\label{class_math_library_tests_1_1_math_tests_a47f8227d06bc3d2bb41731f8cd2ba983}} 
+\index{Math\+Library\+Tests\+::\+Math\+Tests@{Math\+Library\+Tests\+::\+Math\+Tests}!Div\+Test@{Div\+Test}}
+\index{Div\+Test@{Div\+Test}!Math\+Library\+Tests\+::\+Math\+Tests@{Math\+Library\+Tests\+::\+Math\+Tests}}
+\subsubsection{Div\+Test()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Math\+Library\+Tests.\+Math\+Tests.\+Div\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Division test 
+
+
+
+Definition at line 90 of file Basic\+Methods\+Tests.\+cs.
+
+
+\begin{DoxyCode}
+91         \{
+92             Assert.AreEqual(0, math.Div(0, 5));
+93             Assert.AreEqual(1, math.Div(10, 10));
+94             Assert.AreEqual(1, math.Div(-10, -10));
+95             Assert.AreEqual(-1, math.Div(-10, 10));
+96             Assert.AreEqual(-1, math.Div(10, -10));
+97             Assert.AreEqual(5, math.Div(-100000000, 20000000));
+98             Assert.AreEqual(0.5, math.Div(1, 2), Exactness);
+99             Assert.AreEqual(-0.625, math.Div(-5, 8), Exactness);
+100             Assert.AreEqual(2, math.Div(128, 256));
+101             Assert.AreEqual(6.4127039, math.Div(42.6541, 6.6515), Exactness);
+102             Assert.AreEqual(4, math.Div(1, 0.25), Exactness);
+103 
+104 
+105             \textcolor{comment}{//dividing by zero}
+106             \textcolor{keywordtype}{string} noFailMessage = \textcolor{stringliteral}{"No exception message after dividing by zero."};
+107 
+108             \textcolor{keywordflow}{try}
+109             \{
+110                 math.Div(2, 0);
+111                 Assert.Fail(noFailMessage);
+112             \}
+113             \textcolor{keywordflow}{catch} (ExceptionMessage)
+114             \{
+115             \}
+116         \}
+\end{DoxyCode}
+\mbox{\label{class_math_library_tests_1_1_math_tests_a7806f6309978a4d4aa6398482417e6d6}} 
+\index{Math\+Library\+Tests\+::\+Math\+Tests@{Math\+Library\+Tests\+::\+Math\+Tests}!Fact\+Test@{Fact\+Test}}
+\index{Fact\+Test@{Fact\+Test}!Math\+Library\+Tests\+::\+Math\+Tests@{Math\+Library\+Tests\+::\+Math\+Tests}}
+\subsubsection{Fact\+Test()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Math\+Library\+Tests.\+Math\+Tests.\+Fact\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Factorial test 
+
+
+
+Definition at line 109 of file Advanced\+Methods\+Tests.\+cs.
+
+
+\begin{DoxyCode}
+110         \{
+111             Assert.AreEqual(720, math.Fact(6));
+112             Assert.AreEqual(3628800, math.Fact(10));
+113             Assert.AreEqual(1, math.Fact(1));
+114             Assert.AreEqual(1, math.Fact(0));
+115 
+116             \textcolor{comment}{//NaN result}
+117             \textcolor{keywordtype}{string} noFailMessage = \textcolor{stringliteral}{"No exception message when result was NaN."};
+118 
+119             \textcolor{keywordflow}{try}
+120             \{
+121                 math.Fact(-1);
+122                 Assert.Fail(noFailMessage);
+123             \}
+124             \textcolor{keywordflow}{catch} (ExceptionMessage)
+125             \{
+126             \}
+127         \}
+\end{DoxyCode}
+\mbox{\label{class_math_library_tests_1_1_math_tests_a7806f6309978a4d4aa6398482417e6d6}} 
+\index{Math\+Library\+Tests\+::\+Math\+Tests@{Math\+Library\+Tests\+::\+Math\+Tests}!Fact\+Test@{Fact\+Test}}
+\index{Fact\+Test@{Fact\+Test}!Math\+Library\+Tests\+::\+Math\+Tests@{Math\+Library\+Tests\+::\+Math\+Tests}}
+\subsubsection{Fact\+Test()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Math\+Library\+Tests.\+Math\+Tests.\+Fact\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Factorial test 
+
+NaN result
+
+Definition at line 190 of file Math\+Tests.\+cs.
+
+
+\begin{DoxyCode}
+191         \{
+192             Assert.AreEqual((ulong)720, math.Fact(6));
+193             Assert.AreEqual((ulong)3628800, math.Fact(10));
+194             Assert.AreEqual((ulong)1, math.Fact(1));
+195             Assert.AreEqual((ulong)1, math.Fact(0));
+196 
+198             \textcolor{keywordtype}{string} noFailMessage = \textcolor{stringliteral}{"No exception message when result was NaN."};
+199 
+200             \textcolor{keywordflow}{try}
+201             \{
+202                 math.Fact(-1);
+203                 Assert.Fail(noFailMessage);
+204             \}
+205             \textcolor{keywordflow}{catch} (Exception)
+206             \{
+207             \}
+208         \}
+\end{DoxyCode}
+\mbox{\label{class_math_library_tests_1_1_math_tests_ac2a5a6b750a9bc33fd7ca91cf13acc59}} 
+\index{Math\+Library\+Tests\+::\+Math\+Tests@{Math\+Library\+Tests\+::\+Math\+Tests}!Log\+Test@{Log\+Test}}
+\index{Log\+Test@{Log\+Test}!Math\+Library\+Tests\+::\+Math\+Tests@{Math\+Library\+Tests\+::\+Math\+Tests}}
+\subsubsection{Log\+Test()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Math\+Library\+Tests.\+Math\+Tests.\+Log\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Logarithm test 
+
+
+
+Definition at line 133 of file Advanced\+Methods\+Tests.\+cs.
+
+
+\begin{DoxyCode}
+134         \{
+135             Assert.AreEqual(0, math.Log(10, 1));
+136             Assert.AreEqual(10, math.Log(2, 1024));
+137             Assert.AreEqual(1, math.Log(0.5, 0.5), Exactness);
+138             Assert.AreEqual(1.2835, math.Log(100, 369), Exactness);
+139             Assert.AreEqual(-4.9233, math.Log(0.8, 3), Exactness);
+140             Assert.AreEqual(5.3955, math.Log(0.8, 0.3), Exactness);
+141             Assert.AreEqual(-0.7481, math.Log(5, 0.3), Exactness);
+142 
+143             \textcolor{comment}{//NaN result}
+144             \textcolor{keywordtype}{string} noFailMessage = \textcolor{stringliteral}{"No exception message when result was NaN."};
+145 
+146             \textcolor{keywordflow}{try}
+147             \{
+148                 math.Log(0, 1);
+149                 Assert.Fail(noFailMessage);
+150             \}
+151             \textcolor{keywordflow}{catch}(ExceptionMessage)
+152             \{
+153             \}
+154 
+155             \textcolor{keywordflow}{try}
+156             \{
+157                 math.Log(1, 10);
+158                 Assert.Fail(noFailMessage);
+159             \}
+160             \textcolor{keywordflow}{catch} (ExceptionMessage)
+161             \{
+162             \}
+163 
+164             \textcolor{keywordflow}{try}
+165             \{
+166                 math.Log(-3, 10);
+167                 Assert.Fail(noFailMessage);
+168             \}
+169             \textcolor{keywordflow}{catch} (ExceptionMessage)
+170             \{
+171             \}
+172 
+173             \textcolor{keywordflow}{try}
+174             \{
+175                 math.Log(10, -3);
+176                 Assert.Fail(noFailMessage);
+177             \}
+178             \textcolor{keywordflow}{catch} (ExceptionMessage)
+179             \{
+180             \}
+181         \}
+\end{DoxyCode}
+\mbox{\label{class_math_library_tests_1_1_math_tests_ac2a5a6b750a9bc33fd7ca91cf13acc59}} 
+\index{Math\+Library\+Tests\+::\+Math\+Tests@{Math\+Library\+Tests\+::\+Math\+Tests}!Log\+Test@{Log\+Test}}
+\index{Log\+Test@{Log\+Test}!Math\+Library\+Tests\+::\+Math\+Tests@{Math\+Library\+Tests\+::\+Math\+Tests}}
+\subsubsection{Log\+Test()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Math\+Library\+Tests.\+Math\+Tests.\+Log\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Logarithm test 
+
+NaN result
+
+Definition at line 214 of file Math\+Tests.\+cs.
+
+
+\begin{DoxyCode}
+215         \{
+216             Assert.AreEqual(0, math.Log(10, 1));
+217             Assert.AreEqual(10, math.Log(2, 1024));
+218             Assert.AreEqual(1, math.Log(0.5, 0.5), Exactness);
+219             Assert.AreEqual(1.283513, math.Log(100, 369), Exactness);
+220             Assert.AreEqual(-4.923343, math.Log(0.8, 3), Exactness);
+221             Assert.AreEqual(5.395507, math.Log(0.8, 0.3), Exactness);
+222             Assert.AreEqual(-0.748070, math.Log(5, 0.3), Exactness);
+223 
+225             \textcolor{keywordtype}{string} noFailMessage = \textcolor{stringliteral}{"No exception message when result was NaN."};
+226 
+227             \textcolor{keywordflow}{try}
+228             \{
+229                 math.Log(0, 1);
+230                 Assert.Fail(noFailMessage);
+231             \}
+232             \textcolor{keywordflow}{catch} (Exception)
+233             \{
+234             \}
+235 
+236             \textcolor{keywordflow}{try}
+237             \{
+238                 math.Log(1, 10);
+239                 Assert.Fail(noFailMessage);
+240             \}
+241             \textcolor{keywordflow}{catch} (Exception)
+242             \{
+243             \}
+244 
+245             \textcolor{keywordflow}{try}
+246             \{
+247                 math.Log(-3, 10);
+248                 Assert.Fail(noFailMessage);
+249             \}
+250             \textcolor{keywordflow}{catch} (Exception)
+251             \{
+252             \}
+253 
+254             \textcolor{keywordflow}{try}
+255             \{
+256                 math.Log(10, -3);
+257                 Assert.Fail(noFailMessage);
+258             \}
+259             \textcolor{keywordflow}{catch} (Exception)
+260             \{
+261             \}
+262         \}
+\end{DoxyCode}
+\mbox{\label{class_math_library_tests_1_1_math_tests_a30efde5187493ee3d493c29648b6e98b}} 
+\index{Math\+Library\+Tests\+::\+Math\+Tests@{Math\+Library\+Tests\+::\+Math\+Tests}!Mul\+Test@{Mul\+Test}}
+\index{Mul\+Test@{Mul\+Test}!Math\+Library\+Tests\+::\+Math\+Tests@{Math\+Library\+Tests\+::\+Math\+Tests}}
+\subsubsection{Mul\+Test()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Math\+Library\+Tests.\+Math\+Tests.\+Mul\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Multiplication test 
+
+
+
+Definition at line 61 of file Math\+Tests.\+cs.
+
+
+\begin{DoxyCode}
+62         \{
+63             Assert.AreEqual(0, math.Mul(0, 0));
+64             Assert.AreEqual(30, math.Mul(5, 6));
+65             Assert.AreEqual(10, math.Mul(-2, -5));
+66             Assert.AreEqual(-10, math.Mul(2, -5));
+67             Assert.AreEqual(-10, math.Mul(-2, 5));
+68             Assert.AreEqual(0, math.Mul(3516, 0));
+69             Assert.AreEqual(0, math.Mul(0, 3516));
+70             Assert.AreEqual(0.25, math.Mul(0.5, 0.5), Exactness);
+71             Assert.AreEqual(-0.25, math.Mul(-0.5, 0.5), Exactness);
+72             Assert.AreEqual(0.23545135, math.Mul(1, 0.23545135), Exactness);
+73             Assert.AreEqual(200000000, math.Mul(2, 100000000));
+74             Assert.AreEqual(200000000, math.Mul(-2, -100000000));
+75         \}
+\end{DoxyCode}
+\mbox{\label{class_math_library_tests_1_1_math_tests_a30efde5187493ee3d493c29648b6e98b}} 
+\index{Math\+Library\+Tests\+::\+Math\+Tests@{Math\+Library\+Tests\+::\+Math\+Tests}!Mul\+Test@{Mul\+Test}}
+\index{Mul\+Test@{Mul\+Test}!Math\+Library\+Tests\+::\+Math\+Tests@{Math\+Library\+Tests\+::\+Math\+Tests}}
+\subsubsection{Mul\+Test()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Math\+Library\+Tests.\+Math\+Tests.\+Mul\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Multiplication test 
+
+
+
+Definition at line 70 of file Basic\+Methods\+Tests.\+cs.
+
+
+\begin{DoxyCode}
+71         \{
+72             Assert.AreEqual(0, math.Mul(0, 0));
+73             Assert.AreEqual(30, math.Mul(5, 6));
+74             Assert.AreEqual(10, math.Mul(-2, -5));
+75             Assert.AreEqual(-10, math.Mul(2, -5));
+76             Assert.AreEqual(-10, math.Mul(-2, 5));
+77             Assert.AreEqual(0, math.Mul(3516, 0));
+78             Assert.AreEqual(0, math.Mul(0, 3516));
+79             Assert.AreEqual(0.25, math.Mul(0.5, 0.5), Exactness);
+80             Assert.AreEqual(-0.25, math.Mul(-0.5, 0.5), Exactness);
+81             Assert.AreEqual(0.23545135, math.Mul(1, 0.23545135), Exactness);
+82             Assert.AreEqual(200000000, math.Mul(2, 100000000));
+83             Assert.AreEqual(200000000, math.Mul(-2, -100000000));
+84         \}
+\end{DoxyCode}
+\mbox{\label{class_math_library_tests_1_1_math_tests_ad4f8a9e414beb849b5c0bbb6a3a4a488}} 
+\index{Math\+Library\+Tests\+::\+Math\+Tests@{Math\+Library\+Tests\+::\+Math\+Tests}!Pow\+Test@{Pow\+Test}}
+\index{Pow\+Test@{Pow\+Test}!Math\+Library\+Tests\+::\+Math\+Tests@{Math\+Library\+Tests\+::\+Math\+Tests}}
+\subsubsection{Pow\+Test()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Math\+Library\+Tests.\+Math\+Tests.\+Pow\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Power test 
+
+
+
+Definition at line 67 of file Advanced\+Methods\+Tests.\+cs.
+
+
+\begin{DoxyCode}
+68         \{
+69             Assert.AreEqual(0, math.Pow(0, 42));
+70             Assert.AreEqual(1, math.Pow(42, 0));
+71             Assert.AreEqual(1, math.Pow(1, 42));
+72             Assert.AreEqual(1, math.Pow(1, -42));
+73             Assert.AreEqual(1, math.Pow(-1, 42));
+74             Assert.AreEqual(-1, math.Pow(-1, 41));
+75             Assert.AreEqual(36, math.Pow(6, 2));
+76             Assert.AreEqual(1000, math.Pow(10, 3));
+77             Assert.AreEqual(100000000, math.Pow(100000000, 1));
+78             Assert.AreEqual(1024, math.Pow(2, 10));
+79             Assert.AreEqual(-59049, math.Pow(-3, 10));
+80             Assert.AreEqual(3.2768e-41, math.Pow(500, -15), Exactness);
+81             Assert.AreEqual(15.625, math.Pow(2.5, 3), Exactness);
+82             Assert.AreEqual(0.000064, math.Pow(2.5, -3), Exactness);
+83 
+84             \textcolor{comment}{//NaN result}
+85             \textcolor{keywordtype}{string} noFailMessage = \textcolor{stringliteral}{"No exception message when result was NaN."};
+86 
+87             \textcolor{keywordflow}{try}
+88             \{
+89                 math.Pow(-1, 0.5);
+90                 Assert.Fail(noFailMessage);
+91             \}
+92             \textcolor{keywordflow}{catch} (ExceptionMessage)
+93             \{
+94             \}
+95             \textcolor{keywordflow}{try}
+96             \{
+97                 math.Pow(0, -1);
+98                 Assert.Fail(noFailMessage);
+99             \}
+100             \textcolor{keywordflow}{catch} (ExceptionMessage)
+101             \{
+102             \}
+103         \}
+\end{DoxyCode}
+\mbox{\label{class_math_library_tests_1_1_math_tests_ad4f8a9e414beb849b5c0bbb6a3a4a488}} 
+\index{Math\+Library\+Tests\+::\+Math\+Tests@{Math\+Library\+Tests\+::\+Math\+Tests}!Pow\+Test@{Pow\+Test}}
+\index{Pow\+Test@{Pow\+Test}!Math\+Library\+Tests\+::\+Math\+Tests@{Math\+Library\+Tests\+::\+Math\+Tests}}
+\subsubsection{Pow\+Test()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Math\+Library\+Tests.\+Math\+Tests.\+Pow\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Power test 
+
+NaN result
+
+Definition at line 151 of file Math\+Tests.\+cs.
+
+
+\begin{DoxyCode}
+152         \{
+153             Assert.AreEqual(0, math.Pow(0, 42));
+154             Assert.AreEqual(1, math.Pow(42, 0));
+155             Assert.AreEqual(1, math.Pow(1, 42));
+156             Assert.AreEqual(1, math.Pow(-1, 42));
+157             Assert.AreEqual(-1, math.Pow(-1, 41));
+158             Assert.AreEqual(36, math.Pow(6, 2));
+159             Assert.AreEqual(1000, math.Pow(10, 3));
+160             Assert.AreEqual(100000000, math.Pow(100000000, 1));
+161             Assert.AreEqual(1024, math.Pow(2, 10));
+162             Assert.AreEqual(59049, math.Pow(-3, 10));
+163             Assert.AreEqual(15.625, math.Pow(2.5, 3), Exactness);
+164 
+166             \textcolor{keywordtype}{string} noFailMessage = \textcolor{stringliteral}{"No exception message when result was NaN."};
+167 
+168             \textcolor{keywordflow}{try}
+169             \{
+170                 math.Pow(-1, 0.5);
+171                 Assert.Fail(noFailMessage);
+172             \}
+173             \textcolor{keywordflow}{catch} (Exception)
+174             \{
+175             \}
+176             \textcolor{keywordflow}{try}
+177             \{
+178                 math.Pow(0, -1);
+179                 Assert.Fail(noFailMessage);
+180             \}
+181             \textcolor{keywordflow}{catch} (Exception)
+182             \{
+183             \}
+184         \}
+\end{DoxyCode}
+\mbox{\label{class_math_library_tests_1_1_math_tests_aca2539900668a228035a9a25ca895dae}} 
+\index{Math\+Library\+Tests\+::\+Math\+Tests@{Math\+Library\+Tests\+::\+Math\+Tests}!Root\+Test@{Root\+Test}}
+\index{Root\+Test@{Root\+Test}!Math\+Library\+Tests\+::\+Math\+Tests@{Math\+Library\+Tests\+::\+Math\+Tests}}
+\subsubsection{Root\+Test()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Math\+Library\+Tests.\+Math\+Tests.\+Root\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Root test 
+
+
+
+Definition at line 27 of file Advanced\+Methods\+Tests.\+cs.
+
+
+\begin{DoxyCode}
+28         \{
+29             Assert.AreEqual(0, math.Root(0, 42));
+30             Assert.AreEqual(0, math.Root(0, 0.5), Exactness);
+31             Assert.AreEqual(2, math.Root(32, 5));
+32             Assert.AreEqual(0.5, math.Root(8, -3), Exactness);
+33             Assert.AreEqual(500, math.Root(3.2768e-41, -15), Exactness);
+34             Assert.AreEqual(-3, math.Root(-59049, 10));
+35             Assert.AreEqual(2.5, math.Root(15.625, 3), Exactness);
+36             Assert.AreEqual(2.5, math.Root(0.000064, -3), Exactness);
+37             Assert.AreEqual(2, math.Root(1024, 10));
+38             Assert.AreEqual(10, math.Root(0.1, -1), Exactness);
+39             Assert.AreEqual(1, math.Root(1, 42));
+40             Assert.AreEqual(100000000, math.Root(100000000, 1));
+41 
+42             \textcolor{comment}{//NaN result}
+43             \textcolor{keywordtype}{string} noFailMessage = \textcolor{stringliteral}{"No exception message when result was NaN."};
+44 
+45             \textcolor{keywordflow}{try}
+46             \{
+47                 math.Root(-1, 10);
+48                 Assert.Fail(noFailMessage);
+49             \}
+50             \textcolor{keywordflow}{catch} (ExceptionMessage)
+51             \{
+52             \}
+53             \textcolor{keywordflow}{try}
+54             \{
+55                 math.Root(0, -1);
+56                 Assert.Fail(noFailMessage);
+57             \}
+58             \textcolor{keywordflow}{catch} (ExceptionMessage)
+59             \{
+60             \}
+61         \}
+\end{DoxyCode}
+\mbox{\label{class_math_library_tests_1_1_math_tests_aca2539900668a228035a9a25ca895dae}} 
+\index{Math\+Library\+Tests\+::\+Math\+Tests@{Math\+Library\+Tests\+::\+Math\+Tests}!Root\+Test@{Root\+Test}}
+\index{Root\+Test@{Root\+Test}!Math\+Library\+Tests\+::\+Math\+Tests@{Math\+Library\+Tests\+::\+Math\+Tests}}
+\subsubsection{Root\+Test()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Math\+Library\+Tests.\+Math\+Tests.\+Root\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Root test 
+
+NaN result
+
+Definition at line 112 of file Math\+Tests.\+cs.
+
+
+\begin{DoxyCode}
+113         \{
+114             Assert.AreEqual(0, math.Root(0, 42));
+115             Assert.AreEqual(0, math.Root(0, 0.5), Exactness);
+116             Assert.AreEqual(2, math.Root(32, 5));
+117             Assert.AreEqual(0.5, math.Root(8, -3), Exactness);
+118             Assert.AreEqual(500, math.Root(3.2768e-41, -15), Exactness);
+119             Assert.AreEqual(2.5, math.Root(15.625, 3), Exactness);
+120             Assert.AreEqual(25, math.Root(0.000064, -3), Exactness);
+121             Assert.AreEqual(2, math.Root(1024, 10));
+122             Assert.AreEqual(10, math.Root(0.1, -1), Exactness);
+123             Assert.AreEqual(1, math.Root(1, 42));
+124             Assert.AreEqual(100000000, math.Root(100000000, 1));
+125 
+127             \textcolor{keywordtype}{string} noFailMessage = \textcolor{stringliteral}{"No exception message when result was NaN."};
+128 
+129             \textcolor{keywordflow}{try}
+130             \{
+131                 math.Root(-1, 10);
+132                 Assert.Fail(noFailMessage);
+133             \}
+134             \textcolor{keywordflow}{catch} (Exception)
+135             \{
+136             \}
+137             \textcolor{keywordflow}{try}
+138             \{
+139                 math.Root(0, -1);
+140                 Assert.Fail(noFailMessage);
+141             \}
+142             \textcolor{keywordflow}{catch} (Exception)
+143             \{
+144             \}
+145         \}
+\end{DoxyCode}
+\mbox{\label{class_math_library_tests_1_1_math_tests_aa0d5ab9bc26d50a1355470a3b6db48fc}} 
+\index{Math\+Library\+Tests\+::\+Math\+Tests@{Math\+Library\+Tests\+::\+Math\+Tests}!Sub\+Test@{Sub\+Test}}
+\index{Sub\+Test@{Sub\+Test}!Math\+Library\+Tests\+::\+Math\+Tests@{Math\+Library\+Tests\+::\+Math\+Tests}}
+\subsubsection{Sub\+Test()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Math\+Library\+Tests.\+Math\+Tests.\+Sub\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Substraction test 
+
+
+
+Definition at line 39 of file Math\+Tests.\+cs.
+
+
+\begin{DoxyCode}
+40         \{
+41             Assert.AreEqual(0, math.Sub(0, 0));
+42             Assert.AreEqual(20, math.Sub(5, -15));
+43             Assert.AreEqual(-12, math.Sub(60, 72));
+44             Assert.AreEqual(-2, math.Sub(-6, -4));
+45             Assert.AreEqual(25, math.Sub(50, 25));
+46             Assert.AreEqual(4000000, math.Sub(7000000, 3000000));
+47             Assert.AreEqual(-9000000, math.Sub(-7000000, 2000000));
+48             Assert.AreEqual(-128, math.Sub(128, 256));
+49             Assert.AreEqual(4.2, math.Sub(6, 1.8), Exactness);
+50             Assert.AreEqual(-0.2, math.Sub(0.15, 0.35), Exactness);
+51             Assert.AreEqual(10.5, math.Sub(10, -0.5), Exactness);
+52             Assert.AreEqual(-0.32564, math.Sub(0, 0.32564), Exactness);
+53             Assert.AreEqual(2.3256, math.Sub(2, -0.3256), Exactness);
+54             Assert.AreEqual(0, math.Sub(100000000, 100000000));
+55         \}
+\end{DoxyCode}
+\mbox{\label{class_math_library_tests_1_1_math_tests_aa0d5ab9bc26d50a1355470a3b6db48fc}} 
+\index{Math\+Library\+Tests\+::\+Math\+Tests@{Math\+Library\+Tests\+::\+Math\+Tests}!Sub\+Test@{Sub\+Test}}
+\index{Sub\+Test@{Sub\+Test}!Math\+Library\+Tests\+::\+Math\+Tests@{Math\+Library\+Tests\+::\+Math\+Tests}}
+\subsubsection{Sub\+Test()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Math\+Library\+Tests.\+Math\+Tests.\+Sub\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Substraction test 
+
+
+
+Definition at line 48 of file Basic\+Methods\+Tests.\+cs.
+
+
+\begin{DoxyCode}
+49         \{
+50             Assert.AreEqual(0, math.Sub(0, 0));
+51             Assert.AreEqual(20, math.Sub(5, -15));
+52             Assert.AreEqual(-12, math.Sub(60, 72));
+53             Assert.AreEqual(-2, math.Sub(-6, -4));
+54             Assert.AreEqual(25, math.Sub(50, 25));
+55             Assert.AreEqual(4000000, math.Sub(7000000, 3000000));
+56             Assert.AreEqual(-8000000, math.Sub(-7000000, 2000000));
+57             Assert.AreEqual(-128, math.Sub(128, 256));
+58             Assert.AreEqual(4.2, math.Sub(6, 1.8), Exactness);
+59             Assert.AreEqual(-0.2, math.Sub(0.15, 0.35), Exactness);
+60             Assert.AreEqual(10.5, math.Sub(10, -0.5), Exactness);
+61             Assert.AreEqual(-0.32564, math.Sub(0, 0.32564), Exactness);
+62             Assert.AreEqual(2.3256, math.Sub(2, -0.3256), Exactness);
+63             Assert.AreEqual(0, math.Sub(100000000, 100000000));
+64         \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Advanced\+Methods\+Tests.\+cs}\item 
+\textbf{ Basic\+Methods\+Tests.\+cs}\item 
+\textbf{ Math\+Tests.\+cs}\end{DoxyCompactItemize}
