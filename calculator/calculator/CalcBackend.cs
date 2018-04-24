@@ -22,6 +22,7 @@ namespace calculator
         bool was_firstTime_click; //jestli předchozí operace byla firsttime_click
         string lastOperator;
 
+        //konstruktor třídy
         public CalcBackend(TextBlock displ) {
             display = displ;
             Math = new Math_Library.Math();
@@ -33,6 +34,10 @@ namespace calculator
             display.Text = "0";
         }
 
+        /**
+         * @brief metoda, která mění velikost fontu na display v závislosti na počtu zobrazovaných znaků
+         * @param num_of_digits délka řetezce
+         */
         private void display_textResize(int num_of_digits)
         {
             if (num_of_digits > 17) //17 je stanovené maximum čísel, při standartní velikosti, které se vlezou na řádek
@@ -45,6 +50,10 @@ namespace calculator
             }
         }
 
+        /**
+         * @brief vykreslí na display zadané číslo a upraví velikost písma podle počtu číslic
+         * @param number číslo k vypsání na display
+         */
         private void show_number(double number)
         {
             display.FontSize = 36;
@@ -61,6 +70,10 @@ namespace calculator
             }
         }
 
+        /**
+         * @brief Parsuje text na double a pokud je v řetezci ',' nahradí to za '.'
+         * @param text retězec k převedení
+         */
         private double dispString_to_numb(string text)
         {
             if (text.Length == 0)
@@ -74,7 +87,10 @@ namespace calculator
                 return double.Parse(text);
             }
         }
-
+        /**
+         * @brief provadí matematickou operaci
+         * @param lastOperator uchovává operaci podle posledního zvoleného tlačítka, která se následně provede
+         */
         private void do_math_operation()
         {
                 switch (lastOperator)
@@ -105,12 +121,18 @@ namespace calculator
             }
         }
 
+        /**
+         * @brief převede číslo na display na číslo jemu opačné
+         */
         public void num_invert_brn()
         {
             if (display.Text != "Chyba!")
                 display.Text = "" + -(dispString_to_numb(display.Text));
         }
 
+        /**
+         * @brief akce po stlačení číslice
+         */
         public void num_btn_click(int number)
         {
             if (display.Text != "Chyba!")
@@ -154,7 +176,10 @@ namespace calculator
                 }
             }
         }
-
+   
+        /**
+        * @brief akce po stlačení tlačítka nulování
+        */
         public void c_btn_click()
         {
             operand1 = 0;
@@ -164,6 +189,9 @@ namespace calculator
             insert_mode = true;
         }
 
+        /**
+         * @brief akce po stlačení tlačítka mazání poslední číslice
+         */
         public void back_arr_btn_click()
         {
             if (display.Text != "Chyba!")
@@ -196,8 +224,11 @@ namespace calculator
                     }
                 }
             
-        } 
+        }
 
+        /**
+        * @brief akce po stlačení tlačítka desetiné čárky
+        */
         public void point_btn_click()
         {
             if (display.Text != "Chyba!")
@@ -205,6 +236,10 @@ namespace calculator
                     display.Text += ",";
         }
 
+        /**
+        * @brief akce po stlačení tlačítka operace, která vyžaduje jeden operand
+        * @param operation typ operace, která byla zvolena tlačítkem
+        */
         public void one_operand_btn_click(string operation) {
             if (display.Text != "Chyba!")
             {
@@ -231,6 +266,10 @@ namespace calculator
             }
         }
 
+        /**
+        * @brief akce po stlaření tlačítka operace, která vyžaduje dva operandy
+        * @param operation typ operace, která byla zvolena tlačítkem
+        */
         public void two_operand_btn_click(string operation)
         {
             if (display.Text != "Chyba!")
@@ -268,6 +307,9 @@ namespace calculator
             }
         }
 
+        /**
+        * @brief akce po stlačení tlačítka "rovná se"
+        */
         public void eq_btn_click()
         {
             if (display.Text != "Chyba!")
